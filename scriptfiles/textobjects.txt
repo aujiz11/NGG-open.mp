@@ -1,0 +1,50 @@
+new DASign = CreateDynamicObject(19482, -1442.3425, -1177.5278, 109.3145, 0.0000, 0.0000, -69.9871);
+SetDynamicObjectMaterialText(DASign, 0, "DONAHUE ACRES", 80, "Myriad Pro", 40, 1, -65536, 0, 1);
+
+new devin = CreateDynamicObject(19477, 1654.4132, 1460.9488, 1145.5061, 0.0000, 0.0000, 0.0955);
+SetDynamicObjectMaterialText(devin, 0, "DEVIN", 60, "Times New Roman", 0, 1, -16776961, 0, 1);
+
+new statue_nick = CreateDynamicObject(19477, 1654.7705, 1458.2836, 1145.4669, 0.0000, 0.0000, 14.9819);
+SetDynamicObjectMaterialText(statue_nick, 0, "NICK", 60, "Times New Roman", 24, 1, -8092540, 0, 1);
+
+new statue_david = CreateDynamicObject(19477, 1654.8029, 1463.4982, 1145.4870, 0.0000, 0.0000, -14.9917);
+SetDynamicObjectMaterialText(statue_david, 0, "DAVID", 60, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_farva = CreateDynamicObject(19477, 1655.8326, 1456.0074, 1145.4873, 0.0000, 0.0000, 30.0239);
+SetDynamicObjectMaterialText(statue_farva, 0, "FARVA", 60, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_lewis = CreateDynamicObject(19477, 1655.8710, 1465.8571, 1145.5169, 0.0000, 0.0000, -30.4941);
+SetDynamicObjectMaterialText(statue_lewis, 0, "LEWIS", 60, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_chris = CreateDynamicObject(19477, 1657.4949, 1454.0760, 1145.5064, 0.0000, 0.0000, 45.0572);
+SetDynamicObjectMaterialText(statue_chris, 0, "CHRIS", 60, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_brant = CreateDynamicObject(19477, 1659.4951, 1452.6602, 1145.5266, 0.0000, 0.0000, 60.2608);
+SetDynamicObjectMaterialText(statue_brant, 0, "BRANT", 60, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_alexromano = CreateDynamicObject(19477, 1661.8930, 1451.8087, 1145.4670, 0.0000, 0.0000, 77.3718);
+SetDynamicObjectMaterialText(statue_alexromano, 0, "ROMANO", 90, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_christian = CreateDynamicObject(19477, 1664.4891, 1451.5163, 1145.4566, 0.0000, 0.0000, 89.3075);
+SetDynamicObjectMaterialText(statue_christian, 0, "CHRISTIAN", 80, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_pygoz = CreateDynamicObject(19477, 1657.5196, 1467.7890, 1145.4960, 0.0000, 0.0000, -45.3029);
+SetDynamicObjectMaterialText(statue_pygoz, 0, "PYGOZ", 60, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_kenneth = CreateDynamicObject(19477, 1659.5638, 1469.4014, 1145.5158, 0.0000, 0.0000, -60.1177);
+SetDynamicObjectMaterialText(statue_kenneth, 0, "KENNETH", 90, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new statue_royston = CreateDynamicObject(19477, 1661.9720, 1470.3498, 1145.4860, 0.0000, 0.0000, -75.1627);
+SetDynamicObjectMaterialText(statue_royston, 0, "ROYSTON", 90, "Times New Roman", 0, 1, -14053633, 0, 1);
+
+new mhc_logo = CreateDynamicObject(19480, 1648.3519, 1461.1335, 1159.5692, 0.0000, 0.0000, 0.1608);
+SetDynamicObjectMaterialText(mhc_logo, 0, "Mile High Club", 140, "Myriad Pro", 80, 1, -65536, 0, 1);
+
+new adminhof_logo = CreateDynamicObject(19480, 1678.0703, 1461.0832, 1148.6065, 0.0000, 0.0000, 0.0331);
+SetDynamicObjectMaterialText(adminhof_logo, 0, "Admin Hall of Fame", 90, "Times New Roman", 0, 1, -8092540, 0, 1);
+
+new donahue_tower_sign = CreateDynamicObject(19479, -2087.8354, 248.7682, 39.3881, 0.0000, 0.0000, -90.1791);
+SetDynamicObjectMaterialText(donahue_tower_sign, 0, "DONAHUE TOWER", 120, "Times New Roman", 24, 1, -65536, 0, 1);
+
+new vipsf = CreateObject(19353, -2455.0632, 503.8305, 32.7488, 0.1999, 31.5000, -0.0145);
+SetObjectMaterialText(vipsf, "{FF0000}E{6C6E70}volution {FF0000}G{6C6E70}aming {FF38AF}VIP", 0, 130, "Times New Roman", 30,0, -16776961, 0,OBJECT_MATERIAL_TEXT_ALIGN_CENTER);

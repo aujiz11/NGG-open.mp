@@ -1,0 +1,803 @@
+Starting open.mp server (1.1.0.2612) from commit 8829f9f600c36b972b1fc021198bd649afb13fb0
+Loading component Actors.dll
+	Successfully loaded component Actors (1.1.0.2612) with UID c81ca021eae2ad5c
+Loading component Checkpoints.dll
+	Successfully loaded component Checkpoints (1.1.0.2612) with UID 44a937350d611dde
+Loading component Classes.dll
+	Successfully loaded component Classes (1.1.0.2612) with UID 8cfb3183976da208
+Loading component Console.dll
+	Successfully loaded component Console (1.1.0.2612) with UID bfa24e49d0c95ee4
+Loading component CustomModels.dll
+	Successfully loaded component CustomModels (1.1.0.2612) with UID 15e3cb1e7c77ffff
+Loading component Databases.dll
+	Successfully loaded component Databases (1.1.0.2612) with UID 80092e7eb5821a96
+Loading component Dialogs.dll
+	Successfully loaded component Dialogs (1.1.0.2612) with UID 44a111350d611dde
+Loading component Fixes.dll
+	Successfully loaded component Fixes (1.1.0.2612) with UID b5c615eff0329ff7
+Loading component GangZones.dll
+	Successfully loaded component GangZones (1.1.0.2612) with UID b3351d11ee8d8056
+Loading component LegacyConfig.dll
+	Successfully loaded component LegacyConfig (1.1.0.2612) with UID 24ef6216838f9ffc
+Loading component LegacyNetwork.dll
+	Successfully loaded component RakNetLegacyNetwork (1.1.0.2612) with UID ea9799fd79cf8442
+Loading component Menus.dll
+	Successfully loaded component Menus (1.1.0.2612) with UID 621e219eb97ee0b2
+Loading component Objects.dll
+	Successfully loaded component Objects (1.1.0.2612) with UID 59f8415f72da6160
+Loading component Pawn.dll
+	Successfully loaded component Pawn (1.1.0.2612) with UID 78906cd9f19c36a6
+Loading component Pickups.dll
+	Successfully loaded component Pickups (1.1.0.2612) with UID cf304faa363dd971
+Loading component Recordings.dll
+	Successfully loaded component Recordings (1.1.0.2612) with UID 871144d399f5f613
+Loading component sscanf.dll
+	Successfully loaded component sscanf (2.13.8.0) with UID a1e7c01e55caa1f2
+Loading component TextDraws.dll
+	Successfully loaded component TextDraws (1.1.0.2612) with UID 9b5dc2b1d15c992a
+Loading component TextLabels.dll
+	Successfully loaded component TextLabels (1.1.0.2612) with UID a0c57ea80a009742
+Loading component Timers.dll
+	Successfully loaded component Timers (1.1.0.2612) with UID 2ad8124c5ea257a3
+Loading component Unicode.dll
+	Successfully loaded component Unicode (1.1.0.2612) with UID 8ffb446f8353922b
+Loading component Variables.dll
+	Successfully loaded component Variables (1.1.0.2612) with UID 75e121848bc01fa2
+Loading component Vehicles.dll
+	Successfully loaded component Vehicles (1.1.0.2612) with UID 3f1f62ee9e22ab19
+Loaded 23 component(s) from C:\Users\0946576675\Desktop\Main Project\LS-RP\components
+[2023-12-14T21:03:09+0700] [Info] 
+[2023-12-14T21:03:09+0700] [Info]  ===============================
+[2023-12-14T21:03:09+0700] [Info] 
+[2023-12-14T21:03:09+0700] [Info]      sscanf component loaded.   
+[2023-12-14T21:03:09+0700] [Info] 
+[2023-12-14T21:03:09+0700] [Info]          Version: 2.13.8
+[2023-12-14T21:03:09+0700] [Info] 
+[2023-12-14T21:03:09+0700] [Info]    (c) 2022 Alex "Y_Less" Cole  
+[2023-12-14T21:03:09+0700] [Info] 
+[2023-12-14T21:03:09+0700] [Info]  ===============================
+[2023-12-14T21:03:09+0700] [Info] 
+[2023-12-14T21:03:09+0700] [Info] Loading plugin: streamer
+[2023-12-14T21:03:09+0700] [Info] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[2023-12-14T21:03:09+0700] [Info] Loading plugin: mysql
+[2023-12-14T21:03:09+0700] [Info]  >> plugin.mysql: R33 successfully loaded.
+[2023-12-14T21:03:09+0700] [Info] Loading plugin: whirlpool
+[2023-12-14T21:03:09+0700] [Info]  
+[2023-12-14T21:03:09+0700] [Info]  ==================
+[2023-12-14T21:03:09+0700] [Info]  
+[2023-12-14T21:03:09+0700] [Info]   Whirlpool loaded
+[2023-12-14T21:03:09+0700] [Info]  
+[2023-12-14T21:03:09+0700] [Info]  ==================
+[2023-12-14T21:03:10+0700] [Info]  
+[2023-12-14T21:03:10+0700] [Info]  
+[2023-12-14T21:03:10+0700] [Info]  
+[2023-12-14T21:03:10+0700] [Info]          ==============================================================
+[2023-12-14T21:03:10+0700] [Info]          |                                                            |
+[2023-12-14T21:03:10+0700] [Info]          |                                                            |
+[2023-12-14T21:03:10+0700] [Info]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[2023-12-14T21:03:10+0700] [Info]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[2023-12-14T21:03:10+0700] [Info]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[2023-12-14T21:03:10+0700] [Info]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[2023-12-14T21:03:10+0700] [Info]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2023-12-14T21:03:10+0700] [Info]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[2023-12-14T21:03:10+0700] [Info]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[2023-12-14T21:03:10+0700] [Info]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[2023-12-14T21:03:10+0700] [Info]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[2023-12-14T21:03:10+0700] [Info]          |                                                            |
+[2023-12-14T21:03:10+0700] [Info]          |                                                            |
+[2023-12-14T21:03:10+0700] [Info]          |                      (c) 2021 MPL v1.1                     |
+[2023-12-14T21:03:10+0700] [Info]          |            Alex "Y_Less" Cole and contributors.            |
+[2023-12-14T21:03:10+0700] [Info]          |                                                            |
+[2023-12-14T21:03:10+0700] [Info]          |                                                            |
+[2023-12-14T21:03:10+0700] [Info]          ==============================================================
+[2023-12-14T21:03:10+0700] [Info]  
+[2023-12-14T21:03:10+0700] [Info]  
+[2023-12-14T21:03:10+0700] [Info]  ========================================== 
+[2023-12-14T21:03:10+0700] [Info]  |                                        | 
+[2023-12-14T21:03:10+0700] [Info]  |   Generating code, this may take a     | 
+[2023-12-14T21:03:10+0700] [Info]  |  little bit of time.  Note that this   | 
+[2023-12-14T21:03:10+0700] [Info]  |  code generation works best with the   | 
+[2023-12-14T21:03:10+0700] [Info]  |     JIT plugin, which you are not      | 
+[2023-12-14T21:03:10+0700] [Info]  |     currently using.  Get it here:     | 
+[2023-12-14T21:03:10+0700] [Info]  |                                        | 
+[2023-12-14T21:03:10+0700] [Info]  |       https://git.io/jit-plugin        | 
+[2023-12-14T21:03:10+0700] [Info]  |                                        | 
+[2023-12-14T21:03:10+0700] [Info]  |             Please wait...             | 
+[2023-12-14T21:03:11+0700] [Info]  |                                        | 
+[2023-12-14T21:03:11+0700] [Info]  |             Done in 682ms!             | 
+[2023-12-14T21:03:11+0700] [Info]  |                                        | 
+[2023-12-14T21:03:11+0700] [Info]  ========================================== 
+[2023-12-14T21:03:11+0700] [Info]  |                                        | 
+[2023-12-14T21:03:11+0700] [Info]  | Server:      open.mp 1.1.0.2612 (W)    | 
+[2023-12-14T21:03:11+0700] [Info]  | Started:     14 Dec 2023 - 21:03:10    | 
+[2023-12-14T21:03:11+0700] [Info]  |                                        | 
+[2023-12-14T21:03:11+0700] [Info]  | Compiler:    3.10.11 (Windows)         | 
+[2023-12-14T21:03:11+0700] [Info]  | Includes:    open.mp v037030           | 
+[2023-12-14T21:03:11+0700] [Info]  | Codepage:    <none>                    | 
+[2023-12-14T21:03:11+0700] [Info]  | Built:       14 Dec 2023 - 20:52:08    | 
+[2023-12-14T21:03:11+0700] [Info]  |                                        | 
+[2023-12-14T21:03:11+0700] [Info]  | YSI:         v05.09.0982               | 
+[2023-12-14T21:03:11+0700] [Info]  | Master:      -1                        | 
+[2023-12-14T21:03:11+0700] [Info]  |                                        | 
+[2023-12-14T21:03:11+0700] [Info]  | JIT:         <none>                    | 
+[2023-12-14T21:03:11+0700] [Info]  | Crashdetect: <none>                    | 
+[2023-12-14T21:03:11+0700] [Info]  |                                        | 
+[2023-12-14T21:03:11+0700] [Info]  ========================================== 
+[2023-12-14T21:03:11+0700] [Info]  
+[2023-12-14T21:03:11+0700] [Info]  
+[2023-12-14T21:03:11+0700] [Info] Dang chuan bi tai gamemode, xin vui long cho doi...
+[2023-12-14T21:03:11+0700] [Info] [MySQL] (Main Pipelines) Connecting to localhost...
+[2023-12-14T21:03:11+0700] [Info] [MySQL] (MainPipeline) Fatal Error! Could not connect to MySQL: Host localhost - DB: nggv2 - User: root
+[2023-12-14T21:03:11+0700] [Info] [MySQL] Note: Make sure that you have provided the correct connection credentials.
+[2023-12-14T21:03:11+0700] [Info] [MySQL] Error number: 1049
+[2023-12-14T21:03:11+0700] [Info] [Dynamic Giftbox] Loading the Dynamic Giftbox...
+[2023-12-14T21:03:11+0700] [Info] [LoadCrates] Load Query Sent
+[2023-12-14T21:03:11+0700] [Info] [LoadHouses] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadDynamicDoors] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadDynamicMapIcons] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadMailboxes] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadBusinesses] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadAuctions] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadTxtLabels] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadPlants] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [SpeedCameras] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadPayNSprays] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadArrestPoints] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadImpoundPoints] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadRelayForLifeTeams] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadBusinessSales] Loading data from database...
+[2023-12-14T21:03:11+0700] [Warning] Gangzone Y co-ordinates -1585.00 and -1726.00 out of order, inverting.
+[2023-12-14T21:03:11+0700] [Warning] Gangzone X co-ordinates 2240.00 and 2236.00 out of order, inverting.
+[2023-12-14T21:03:11+0700] [Warning] Gangzone Y co-ordinates -1032.00 and -1042.00 out of order, inverting.
+[2023-12-14T21:03:11+0700] [Info] [LoadTurfWars] 65 turfs loaded.
+[2023-12-14T21:03:11+0700] [Info] [LoadPaintballArenas] 10 paintball arenas loaded.
+[2023-12-14T21:03:11+0700] [Info] [LoadEventPoints] 0 event points loaded.
+[2023-12-14T21:03:11+0700] [Info] [LoadGates] Loading data from database...
+[2023-12-14T21:03:11+0700] [Info] [LoadElevatorStuff] 20 floors loaded.
+[2023-12-14T21:03:11+0700] [Info] [LoadFamilies] Dang tai du lieu tu database...
+[2023-12-14T21:03:11+0700] [Info] [LoadFamilyPoints] Loading Family Points from the database, please wait...
+[2023-12-14T21:03:11+0700] [Info] [MiscLoad] Misc Loaded
+[2023-12-14T21:03:11+0700] [Info] Resetting news...
+[2023-12-14T21:03:11+0700] [Info] Resetting default server variables..
+[2023-12-14T21:03:11+0700] [Info] Adjusted the server time...
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Loading Dynamic Static Vehicles...
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Dynamic Static Vehicles has been loaded.
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Loading Dynamic Pickups...
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Dynamic Pickups has been loaded.
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Loading 3D Text Labels...
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Dynamic 3D Text Labels has been loaded.
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Loading Dynamic Buttons...
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Dynamic Buttons has been loaded.
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Loading Dynamic Objects...
+[2023-12-14T21:03:11+0700] [Info] [Streamer] Dynamic Objects has been loaded.
+[2023-12-14T21:03:11+0700] [Info] [Textdraws] Loading Textdraws...
+[2023-12-14T21:03:11+0700] [Info] [Textdraws] Loaded textdraws.
+[2023-12-14T21:03:11+0700] [Info] [Dynamic Groups] Loading Dynamic Groups...
+[2023-12-14T21:03:11+0700] [Info] [Dynamic Groups] Loading Dynamic Groups Vehicles...
+[2023-12-14T21:03:11+0700] [Info] 
+-------------------------------------------
+[2023-12-14T21:03:11+0700] [Info] Cong Dong GTA Viet Nam
+
+[2023-12-14T21:03:11+0700] [Info] Copyright (C) GVN Group, LLC (2015-2100)
+[2023-12-14T21:03:11+0700] [Info] Giu moi ban quyen
+[2023-12-14T21:03:11+0700] [Info] -------------------------------------------
+
+[2023-12-14T21:03:11+0700] [Info] Da chay thanh cong gamemode...
+[2023-12-14T21:03:11+0700] [Info] Legacy Network started on port 7777
+[2023-12-14T21:03:11+0700] [Info] 
+
+*** Streamer Plugin v2.9.5 by Incognito unloaded ***
+
+[2023-12-14T21:03:11+0700] [Info] plugin.mysql: Unloading plugin...
+[2023-12-14T21:03:16+0700] [Info] plugin.mysql: Plugin unloaded.
+[2023-12-14T21:03:16+0700] [Info]  
+[2023-12-14T21:03:16+0700] [Info]  ====================
+[2023-12-14T21:03:16+0700] [Info]  
+[2023-12-14T21:03:16+0700] [Info]   Whirlpool unloaded
+[2023-12-14T21:03:16+0700] [Info]  
+[2023-12-14T21:03:16+0700] [Info]  ====================
+[2023-12-14T21:03:16+0700] [Info]  
+[2023-12-14T21:03:16+0700] [Info] 
+[2023-12-14T21:03:16+0700] [Info]  ===============================
+[2023-12-14T21:03:16+0700] [Info] 
+[2023-12-14T21:03:16+0700] [Info]     sscanf component unloaded.  
+[2023-12-14T21:03:16+0700] [Info] 
+[2023-12-14T21:03:16+0700] [Info]  ===============================
+[2023-12-14T21:03:16+0700] [Info] 
+Starting open.mp server (1.1.0.2612) from commit 8829f9f600c36b972b1fc021198bd649afb13fb0
+Loading component Actors.dll
+	Successfully loaded component Actors (1.1.0.2612) with UID c81ca021eae2ad5c
+Loading component Checkpoints.dll
+	Successfully loaded component Checkpoints (1.1.0.2612) with UID 44a937350d611dde
+Loading component Classes.dll
+	Successfully loaded component Classes (1.1.0.2612) with UID 8cfb3183976da208
+Loading component Console.dll
+	Successfully loaded component Console (1.1.0.2612) with UID bfa24e49d0c95ee4
+Loading component CustomModels.dll
+	Successfully loaded component CustomModels (1.1.0.2612) with UID 15e3cb1e7c77ffff
+Loading component Databases.dll
+	Successfully loaded component Databases (1.1.0.2612) with UID 80092e7eb5821a96
+Loading component Dialogs.dll
+	Successfully loaded component Dialogs (1.1.0.2612) with UID 44a111350d611dde
+Loading component Fixes.dll
+	Successfully loaded component Fixes (1.1.0.2612) with UID b5c615eff0329ff7
+Loading component GangZones.dll
+	Successfully loaded component GangZones (1.1.0.2612) with UID b3351d11ee8d8056
+Loading component LegacyConfig.dll
+	Successfully loaded component LegacyConfig (1.1.0.2612) with UID 24ef6216838f9ffc
+Loading component LegacyNetwork.dll
+	Successfully loaded component RakNetLegacyNetwork (1.1.0.2612) with UID ea9799fd79cf8442
+Loading component Menus.dll
+	Successfully loaded component Menus (1.1.0.2612) with UID 621e219eb97ee0b2
+Loading component Objects.dll
+	Successfully loaded component Objects (1.1.0.2612) with UID 59f8415f72da6160
+Loading component Pawn.dll
+	Successfully loaded component Pawn (1.1.0.2612) with UID 78906cd9f19c36a6
+Loading component Pickups.dll
+	Successfully loaded component Pickups (1.1.0.2612) with UID cf304faa363dd971
+Loading component Recordings.dll
+	Successfully loaded component Recordings (1.1.0.2612) with UID 871144d399f5f613
+Loading component sscanf.dll
+	Successfully loaded component sscanf (2.13.8.0) with UID a1e7c01e55caa1f2
+Loading component TextDraws.dll
+	Successfully loaded component TextDraws (1.1.0.2612) with UID 9b5dc2b1d15c992a
+Loading component TextLabels.dll
+	Successfully loaded component TextLabels (1.1.0.2612) with UID a0c57ea80a009742
+Loading component Timers.dll
+	Successfully loaded component Timers (1.1.0.2612) with UID 2ad8124c5ea257a3
+Loading component Unicode.dll
+	Successfully loaded component Unicode (1.1.0.2612) with UID 8ffb446f8353922b
+Loading component Variables.dll
+	Successfully loaded component Variables (1.1.0.2612) with UID 75e121848bc01fa2
+Loading component Vehicles.dll
+	Successfully loaded component Vehicles (1.1.0.2612) with UID 3f1f62ee9e22ab19
+Loaded 23 component(s) from C:\Users\0946576675\Desktop\Main Project\LS-RP\components
+[2023-12-14T21:05:22+0700] [Info] 
+[2023-12-14T21:05:22+0700] [Info]  ===============================
+[2023-12-14T21:05:22+0700] [Info] 
+[2023-12-14T21:05:22+0700] [Info]      sscanf component loaded.   
+[2023-12-14T21:05:22+0700] [Info] 
+[2023-12-14T21:05:22+0700] [Info]          Version: 2.13.8
+[2023-12-14T21:05:23+0700] [Info] 
+[2023-12-14T21:05:23+0700] [Info]    (c) 2022 Alex "Y_Less" Cole  
+[2023-12-14T21:05:23+0700] [Info] 
+[2023-12-14T21:05:23+0700] [Info]  ===============================
+[2023-12-14T21:05:23+0700] [Info] 
+[2023-12-14T21:05:23+0700] [Info] Loading plugin: streamer
+[2023-12-14T21:05:23+0700] [Info] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[2023-12-14T21:05:23+0700] [Info] Loading plugin: mysql
+[2023-12-14T21:05:23+0700] [Info]  >> plugin.mysql: R33 successfully loaded.
+[2023-12-14T21:05:23+0700] [Info] Loading plugin: whirlpool
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]  ==================
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]   Whirlpool loaded
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]  ==================
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]          ==============================================================
+[2023-12-14T21:05:23+0700] [Info]          |                                                            |
+[2023-12-14T21:05:23+0700] [Info]          |                                                            |
+[2023-12-14T21:05:23+0700] [Info]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[2023-12-14T21:05:23+0700] [Info]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[2023-12-14T21:05:23+0700] [Info]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[2023-12-14T21:05:23+0700] [Info]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[2023-12-14T21:05:23+0700] [Info]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2023-12-14T21:05:23+0700] [Info]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[2023-12-14T21:05:23+0700] [Info]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[2023-12-14T21:05:23+0700] [Info]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[2023-12-14T21:05:23+0700] [Info]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[2023-12-14T21:05:23+0700] [Info]          |                                                            |
+[2023-12-14T21:05:23+0700] [Info]          |                                                            |
+[2023-12-14T21:05:23+0700] [Info]          |                      (c) 2021 MPL v1.1                     |
+[2023-12-14T21:05:23+0700] [Info]          |            Alex "Y_Less" Cole and contributors.            |
+[2023-12-14T21:05:23+0700] [Info]          |                                                            |
+[2023-12-14T21:05:23+0700] [Info]          |                                                            |
+[2023-12-14T21:05:23+0700] [Info]          ==============================================================
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]  
+[2023-12-14T21:05:23+0700] [Info]  ========================================== 
+[2023-12-14T21:05:23+0700] [Info]  |                                        | 
+[2023-12-14T21:05:23+0700] [Info]  |   Generating code, this may take a     | 
+[2023-12-14T21:05:23+0700] [Info]  |  little bit of time.  Note that this   | 
+[2023-12-14T21:05:23+0700] [Info]  |  code generation works best with the   | 
+[2023-12-14T21:05:23+0700] [Info]  |     JIT plugin, which you are not      | 
+[2023-12-14T21:05:23+0700] [Info]  |     currently using.  Get it here:     | 
+[2023-12-14T21:05:23+0700] [Info]  |                                        | 
+[2023-12-14T21:05:23+0700] [Info]  |       https://git.io/jit-plugin        | 
+[2023-12-14T21:05:23+0700] [Info]  |                                        | 
+[2023-12-14T21:05:23+0700] [Info]  |             Please wait...             | 
+[2023-12-14T21:05:24+0700] [Info]  |                                        | 
+[2023-12-14T21:05:24+0700] [Info]  |             Done in 316ms!             | 
+[2023-12-14T21:05:24+0700] [Info]  |                                        | 
+[2023-12-14T21:05:24+0700] [Info]  ========================================== 
+[2023-12-14T21:05:24+0700] [Info]  |                                        | 
+[2023-12-14T21:05:24+0700] [Info]  | Server:      open.mp 1.1.0.2612 (W)    | 
+[2023-12-14T21:05:24+0700] [Info]  | Started:     14 Dec 2023 - 21:05:23    | 
+[2023-12-14T21:05:24+0700] [Info]  |                                        | 
+[2023-12-14T21:05:24+0700] [Info]  | Compiler:    3.10.11 (Windows)         | 
+[2023-12-14T21:05:24+0700] [Info]  | Includes:    open.mp v037030           | 
+[2023-12-14T21:05:24+0700] [Info]  | Codepage:    <none>                    | 
+[2023-12-14T21:05:24+0700] [Info]  | Built:       14 Dec 2023 - 20:52:08    | 
+[2023-12-14T21:05:24+0700] [Info]  |                                        | 
+[2023-12-14T21:05:24+0700] [Info]  | YSI:         v05.09.0982               | 
+[2023-12-14T21:05:24+0700] [Info]  | Master:      -1                        | 
+[2023-12-14T21:05:24+0700] [Info]  |                                        | 
+[2023-12-14T21:05:24+0700] [Info]  | JIT:         <none>                    | 
+[2023-12-14T21:05:24+0700] [Info]  | Crashdetect: <none>                    | 
+[2023-12-14T21:05:24+0700] [Info]  |                                        | 
+[2023-12-14T21:05:24+0700] [Info]  ========================================== 
+[2023-12-14T21:05:24+0700] [Info]  
+[2023-12-14T21:05:24+0700] [Info]  
+[2023-12-14T21:05:24+0700] [Info] Dang chuan bi tai gamemode, xin vui long cho doi...
+[2023-12-14T21:05:24+0700] [Info] [MySQL] (Main Pipelines) Connecting to localhost...
+[2023-12-14T21:05:24+0700] [Info] [MySQL] (MainPipeline) Connection successful toward MySQL Database Server!
+[2023-12-14T21:05:24+0700] [Info] [Dynamic Giftbox] Loading the Dynamic Giftbox...
+[2023-12-14T21:05:24+0700] [Info] [LoadCrates] Load Query Sent
+[2023-12-14T21:05:24+0700] [Info] [LoadHouses] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadDynamicDoors] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadDynamicMapIcons] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadMailboxes] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadBusinesses] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadAuctions] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadTxtLabels] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadPlants] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [SpeedCameras] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadPayNSprays] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadArrestPoints] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadImpoundPoints] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadRelayForLifeTeams] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadBusinessSales] Loading data from database...
+[2023-12-14T21:05:24+0700] [Warning] Gangzone Y co-ordinates -1585.00 and -1726.00 out of order, inverting.
+[2023-12-14T21:05:24+0700] [Warning] Gangzone X co-ordinates 2240.00 and 2236.00 out of order, inverting.
+[2023-12-14T21:05:24+0700] [Warning] Gangzone Y co-ordinates -1032.00 and -1042.00 out of order, inverting.
+[2023-12-14T21:05:24+0700] [Info] [LoadTurfWars] 65 turfs loaded.
+[2023-12-14T21:05:24+0700] [Info] [LoadPaintballArenas] 10 paintball arenas loaded.
+[2023-12-14T21:05:24+0700] [Info] [LoadEventPoints] 0 event points loaded.
+[2023-12-14T21:05:24+0700] [Info] [LoadGates] Loading data from database...
+[2023-12-14T21:05:24+0700] [Info] [LoadElevatorStuff] 20 floors loaded.
+[2023-12-14T21:05:24+0700] [Info] [LoadFamilies] Dang tai du lieu tu database...
+[2023-12-14T21:05:24+0700] [Info] [LoadFamilyPoints] Loading Family Points from the database, please wait...
+[2023-12-14T21:05:24+0700] [Info] [MiscLoad] Misc Loaded
+[2023-12-14T21:05:24+0700] [Info] Resetting news...
+[2023-12-14T21:05:24+0700] [Info] Resetting default server variables..
+[2023-12-14T21:05:24+0700] [Info] Adjusted the server time...
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Loading Dynamic Static Vehicles...
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Dynamic Static Vehicles has been loaded.
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Loading Dynamic Pickups...
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Dynamic Pickups has been loaded.
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Loading 3D Text Labels...
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Dynamic 3D Text Labels has been loaded.
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Loading Dynamic Buttons...
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Dynamic Buttons has been loaded.
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Loading Dynamic Objects...
+[2023-12-14T21:05:24+0700] [Info] [Streamer] Dynamic Objects has been loaded.
+[2023-12-14T21:05:24+0700] [Info] [Textdraws] Loading Textdraws...
+[2023-12-14T21:05:24+0700] [Info] [Textdraws] Loaded textdraws.
+[2023-12-14T21:05:24+0700] [Info] [Dynamic Groups] Loading Dynamic Groups...
+[2023-12-14T21:05:24+0700] [Info] [Dynamic Groups] Loading Dynamic Groups Vehicles...
+[2023-12-14T21:05:24+0700] [Info] 
+-------------------------------------------
+[2023-12-14T21:05:24+0700] [Info] Cong Dong GTA Viet Nam
+
+[2023-12-14T21:05:24+0700] [Info] Copyright (C) GVN Group, LLC (2015-2100)
+[2023-12-14T21:05:24+0700] [Info] Giu moi ban quyen
+[2023-12-14T21:05:24+0700] [Info] -------------------------------------------
+
+[2023-12-14T21:05:24+0700] [Info] Da chay thanh cong gamemode...
+[2023-12-14T21:05:24+0700] [Info] Legacy Network started on port 7777
+[2023-12-14T21:05:24+0700] [Info] [Dynamic Giftbox] da tai thanh cong Dynamic giftbox.
+[2023-12-14T21:05:24+0700] [Info] [LoadCrates] Loading Crates Finished
+[2023-12-14T21:05:24+0700] [Info] [LoadHouses] 5000 ngoi nha duoc tai.
+[2023-12-14T21:05:24+0700] [Info] [LoadDynamicDoors] 3000 door duoc tai.
+[2023-12-14T21:05:24+0700] [Info] [LoadDynamicMapIcons] 400 icons map duoc tai.
+[2023-12-14T21:05:24+0700] [Info] [LoadMailboxes] 50 mailboxes duoc tai.
+[2023-12-14T21:05:24+0700] [Info] [LoadBusinesses] 200 businesses rehashed/loaded.
+[2023-12-14T21:05:24+0700] [Info] [LoadPlants] Successfully loaded 300 plants
+[2023-12-14T21:05:24+0700] [Info] [SpeedCameras] Khong the tai cac may ban toc do.
+[2023-12-14T21:05:24+0700] [Info] [LoadRelayForLifeTeams] 200 teams loaded.
+[2023-12-14T21:05:24+0700] [Info] [LOADSALEDATA] Inserted new row into `sales`
+[2023-12-14T21:05:24+0700] [Info] Price0: 1000
+[2023-12-14T21:05:24+0700] [Info] Price1: 199
+[2023-12-14T21:05:24+0700] [Info] Price2: 180
+[2023-12-14T21:05:24+0700] [Info] Price3: 80
+[2023-12-14T21:05:24+0700] [Info] Price4: 100
+[2023-12-14T21:05:24+0700] [Info] Price5: 100
+[2023-12-14T21:05:24+0700] [Info] Price6: 250
+[2023-12-14T21:05:24+0700] [Info] Price7: 90
+[2023-12-14T21:05:24+0700] [Info] Price8: 25
+[2023-12-14T21:05:24+0700] [Info] Price9: 80
+[2023-12-14T21:05:24+0700] [Info] Price10: 25
+[2023-12-14T21:05:24+0700] [Info] Price11: 150
+[2023-12-14T21:05:24+0700] [Info] Price12: 200
+[2023-12-14T21:05:24+0700] [Info] Price13: 300
+[2023-12-14T21:05:24+0700] [Info] Price14: 299
+[2023-12-14T21:05:24+0700] [Info] Price15: 100
+[2023-12-14T21:05:24+0700] [Info] Price16: 60
+[2023-12-14T21:05:24+0700] [Info] Price17: 1
+[2023-12-14T21:05:24+0700] [Info] Price18: 1
+[2023-12-14T21:05:24+0700] [Info] Price19: 2
+[2023-12-14T21:05:24+0700] [Info] Price20: 11
+[2023-12-14T21:05:24+0700] [Info] Price21: 10000
+[2023-12-14T21:05:24+0700] [Info] Price22: 50
+[2023-12-14T21:05:24+0700] [Info] Price23: 149
+[2023-12-14T21:05:24+0700] [Info] Price24: 2
+[2023-12-14T21:05:24+0700] [Info] Price25: 300
+[2023-12-14T21:05:24+0700] [Info] Price26: 400
+[2023-12-14T21:05:24+0700] [Info] Price27: 500
+[2023-12-14T21:05:24+0700] [Info] Price28: 100
+[2023-12-14T21:05:24+0700] [Info] Price29: 29
+[2023-12-14T21:05:24+0700] [Info] [Family Points] 8 family points has been loaded.
+[2023-12-14T21:05:24+0700] [Info] TotalSold0: 0 | AmountMade0: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold1: 0 | AmountMade1: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold2: 0 | AmountMade2: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold3: 0 | AmountMade3: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold4: 0 | AmountMade4: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold5: 0 | AmountMade5: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold6: 0 | AmountMade6: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold7: 0 | AmountMade7: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold8: 0 | AmountMade8: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold9: 0 | AmountMade9: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold10: 0 | AmountMade10: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold11: 0 | AmountMade11: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold12: 0 | AmountMade12: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold13: 0 | AmountMade13: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold14: 0 | AmountMade14: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold15: 0 | AmountMade15: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold16: 0 | AmountMade16: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold17: 0 | AmountMade17: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold18: 0 | AmountMade18: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold19: 0 | AmountMade19: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold20: 0 | AmountMade20: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold21: 0 | AmountMade21: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold22: 0 | AmountMade22: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold23: 0 | AmountMade23: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold24: 0 | AmountMade24: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold25: 0 | AmountMade25: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold26: 0 | AmountMade26: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold27: 0 | AmountMade27: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold28: 0 | AmountMade28: 0
+[2023-12-14T21:05:24+0700] [Info] TotalSold29: 0 | AmountMade29: 0
+[2023-12-14T21:05:25+0700] [Info] Couldn't announce legacy network to open.mp list.
+[2023-12-14T21:05:25+0700] [Info] 	[Server Error] Status: 406
+[2023-12-14T21:05:25+0700] [Info] 	[Server Error] Message: {"error":"failed to query server: failed to resolve host: address 2001:ee0:55c8:1f0:fdf9:85af:b82e:42c8:7777: too many colons in address"}
+[2023-12-14T21:05:25+0700] [Info] This won't affect the server's behaviour.
+[2023-12-14T21:06:17+0700] [Info] [connection] incoming connection: 127.0.0.1:56627 id: 0
+[2023-12-14T21:06:17+0700] [Info] [join] au_jiz has joined the server (0:127.0.0.1)
+[2023-12-14T21:06:24+0700] [Info] au jiz has logged in.
+[2023-12-14T21:07:05+0700] [Info] [part] au_jiz has left the server (0:1)
+[2023-12-14T21:07:34+0700] [Info] 
+
+*** Streamer Plugin v2.9.5 by Incognito unloaded ***
+
+[2023-12-14T21:07:34+0700] [Info] plugin.mysql: Unloading plugin...
+[2023-12-14T21:07:34+0700] [Info] plugin.mysql: Plugin unloaded.
+[2023-12-14T21:07:34+0700] [Info]  
+[2023-12-14T21:07:34+0700] [Info]  ====================
+[2023-12-14T21:07:34+0700] [Info]  
+[2023-12-14T21:07:34+0700] [Info]   Whirlpool unloaded
+[2023-12-14T21:07:34+0700] [Info]  
+[2023-12-14T21:07:34+0700] [Info]  ====================
+[2023-12-14T21:07:34+0700] [Info]  
+[2023-12-14T21:07:34+0700] [Info] 
+[2023-12-14T21:07:34+0700] [Info]  ===============================
+[2023-12-14T21:07:34+0700] [Info] 
+[2023-12-14T21:07:34+0700] [Info]     sscanf component unloaded.  
+[2023-12-14T21:07:34+0700] [Info] 
+[2023-12-14T21:07:34+0700] [Info]  ===============================
+[2023-12-14T21:07:34+0700] [Info] 
+Starting open.mp server (1.1.0.2612) from commit 8829f9f600c36b972b1fc021198bd649afb13fb0
+Loading component Actors.dll
+	Successfully loaded component Actors (1.1.0.2612) with UID c81ca021eae2ad5c
+Loading component Checkpoints.dll
+	Successfully loaded component Checkpoints (1.1.0.2612) with UID 44a937350d611dde
+Loading component Classes.dll
+	Successfully loaded component Classes (1.1.0.2612) with UID 8cfb3183976da208
+Loading component Console.dll
+	Successfully loaded component Console (1.1.0.2612) with UID bfa24e49d0c95ee4
+Loading component CustomModels.dll
+	Successfully loaded component CustomModels (1.1.0.2612) with UID 15e3cb1e7c77ffff
+Loading component Databases.dll
+	Successfully loaded component Databases (1.1.0.2612) with UID 80092e7eb5821a96
+Loading component Dialogs.dll
+	Successfully loaded component Dialogs (1.1.0.2612) with UID 44a111350d611dde
+Loading component Fixes.dll
+	Successfully loaded component Fixes (1.1.0.2612) with UID b5c615eff0329ff7
+Loading component GangZones.dll
+	Successfully loaded component GangZones (1.1.0.2612) with UID b3351d11ee8d8056
+Loading component LegacyConfig.dll
+	Successfully loaded component LegacyConfig (1.1.0.2612) with UID 24ef6216838f9ffc
+Loading component LegacyNetwork.dll
+	Successfully loaded component RakNetLegacyNetwork (1.1.0.2612) with UID ea9799fd79cf8442
+Loading component Menus.dll
+	Successfully loaded component Menus (1.1.0.2612) with UID 621e219eb97ee0b2
+Loading component Objects.dll
+	Successfully loaded component Objects (1.1.0.2612) with UID 59f8415f72da6160
+Loading component Pawn.dll
+	Successfully loaded component Pawn (1.1.0.2612) with UID 78906cd9f19c36a6
+Loading component Pickups.dll
+	Successfully loaded component Pickups (1.1.0.2612) with UID cf304faa363dd971
+Loading component Recordings.dll
+	Successfully loaded component Recordings (1.1.0.2612) with UID 871144d399f5f613
+Loading component sscanf.dll
+	Successfully loaded component sscanf (2.13.8.0) with UID a1e7c01e55caa1f2
+Loading component TextDraws.dll
+	Successfully loaded component TextDraws (1.1.0.2612) with UID 9b5dc2b1d15c992a
+Loading component TextLabels.dll
+	Successfully loaded component TextLabels (1.1.0.2612) with UID a0c57ea80a009742
+Loading component Timers.dll
+	Successfully loaded component Timers (1.1.0.2612) with UID 2ad8124c5ea257a3
+Loading component Unicode.dll
+	Successfully loaded component Unicode (1.1.0.2612) with UID 8ffb446f8353922b
+Loading component Variables.dll
+	Successfully loaded component Variables (1.1.0.2612) with UID 75e121848bc01fa2
+Loading component Vehicles.dll
+	Successfully loaded component Vehicles (1.1.0.2612) with UID 3f1f62ee9e22ab19
+Loaded 23 component(s) from C:\Users\0946576675\Desktop\Main Project\LS-RP\components
+[2023-12-14T21:07:40+0700] [Info] 
+[2023-12-14T21:07:40+0700] [Info]  ===============================
+[2023-12-14T21:07:40+0700] [Info] 
+[2023-12-14T21:07:40+0700] [Info]      sscanf component loaded.   
+[2023-12-14T21:07:40+0700] [Info] 
+[2023-12-14T21:07:40+0700] [Info]          Version: 2.13.8
+[2023-12-14T21:07:40+0700] [Info] 
+[2023-12-14T21:07:40+0700] [Info]    (c) 2022 Alex "Y_Less" Cole  
+[2023-12-14T21:07:40+0700] [Info] 
+[2023-12-14T21:07:40+0700] [Info]  ===============================
+[2023-12-14T21:07:40+0700] [Info] 
+[2023-12-14T21:07:40+0700] [Info] Loading plugin: streamer
+[2023-12-14T21:07:40+0700] [Info] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[2023-12-14T21:07:40+0700] [Info] Loading plugin: mysql
+[2023-12-14T21:07:40+0700] [Info]  >> plugin.mysql: R33 successfully loaded.
+[2023-12-14T21:07:40+0700] [Info] Loading plugin: whirlpool
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]  ==================
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]   Whirlpool loaded
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]  ==================
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]          ==============================================================
+[2023-12-14T21:07:40+0700] [Info]          |                                                            |
+[2023-12-14T21:07:40+0700] [Info]          |                                                            |
+[2023-12-14T21:07:40+0700] [Info]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[2023-12-14T21:07:40+0700] [Info]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[2023-12-14T21:07:40+0700] [Info]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[2023-12-14T21:07:40+0700] [Info]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[2023-12-14T21:07:40+0700] [Info]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2023-12-14T21:07:40+0700] [Info]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[2023-12-14T21:07:40+0700] [Info]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[2023-12-14T21:07:40+0700] [Info]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[2023-12-14T21:07:40+0700] [Info]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[2023-12-14T21:07:40+0700] [Info]          |                                                            |
+[2023-12-14T21:07:40+0700] [Info]          |                                                            |
+[2023-12-14T21:07:40+0700] [Info]          |                      (c) 2021 MPL v1.1                     |
+[2023-12-14T21:07:40+0700] [Info]          |            Alex "Y_Less" Cole and contributors.            |
+[2023-12-14T21:07:40+0700] [Info]          |                                                            |
+[2023-12-14T21:07:40+0700] [Info]          |                                                            |
+[2023-12-14T21:07:40+0700] [Info]          ==============================================================
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]  
+[2023-12-14T21:07:40+0700] [Info]  ========================================== 
+[2023-12-14T21:07:40+0700] [Info]  |                                        | 
+[2023-12-14T21:07:40+0700] [Info]  |   Generating code, this may take a     | 
+[2023-12-14T21:07:40+0700] [Info]  |  little bit of time.  Note that this   | 
+[2023-12-14T21:07:40+0700] [Info]  |  code generation works best with the   | 
+[2023-12-14T21:07:40+0700] [Info]  |     JIT plugin, which you are not      | 
+[2023-12-14T21:07:40+0700] [Info]  |     currently using.  Get it here:     | 
+[2023-12-14T21:07:40+0700] [Info]  |                                        | 
+[2023-12-14T21:07:40+0700] [Info]  |       https://git.io/jit-plugin        | 
+[2023-12-14T21:07:40+0700] [Info]  |                                        | 
+[2023-12-14T21:07:40+0700] [Info]  |             Please wait...             | 
+[2023-12-14T21:07:41+0700] [Info]  |                                        | 
+[2023-12-14T21:07:41+0700] [Info]  |             Done in 285ms!             | 
+[2023-12-14T21:07:41+0700] [Info]  |                                        | 
+[2023-12-14T21:07:41+0700] [Info]  ========================================== 
+[2023-12-14T21:07:41+0700] [Info]  |                                        | 
+[2023-12-14T21:07:41+0700] [Info]  | Server:      open.mp 1.1.0.2612 (W)    | 
+[2023-12-14T21:07:41+0700] [Info]  | Started:     14 Dec 2023 - 21:07:40    | 
+[2023-12-14T21:07:41+0700] [Info]  |                                        | 
+[2023-12-14T21:07:41+0700] [Info]  | Compiler:    3.10.11 (Windows)         | 
+[2023-12-14T21:07:41+0700] [Info]  | Includes:    open.mp v037030           | 
+[2023-12-14T21:07:41+0700] [Info]  | Codepage:    <none>                    | 
+[2023-12-14T21:07:41+0700] [Info]  | Built:       14 Dec 2023 - 20:52:08    | 
+[2023-12-14T21:07:41+0700] [Info]  |                                        | 
+[2023-12-14T21:07:41+0700] [Info]  | YSI:         v05.09.0982               | 
+[2023-12-14T21:07:41+0700] [Info]  | Master:      -1                        | 
+[2023-12-14T21:07:41+0700] [Info]  |                                        | 
+[2023-12-14T21:07:41+0700] [Info]  | JIT:         <none>                    | 
+[2023-12-14T21:07:41+0700] [Info]  | Crashdetect: <none>                    | 
+[2023-12-14T21:07:41+0700] [Info]  |                                        | 
+[2023-12-14T21:07:41+0700] [Info]  ========================================== 
+[2023-12-14T21:07:41+0700] [Info]  
+[2023-12-14T21:07:41+0700] [Info]  
+[2023-12-14T21:07:41+0700] [Info] Dang chuan bi tai gamemode, xin vui long cho doi...
+[2023-12-14T21:07:41+0700] [Info] [MySQL] (Main Pipelines) Connecting to localhost...
+[2023-12-14T21:07:41+0700] [Info] [MySQL] (MainPipeline) Connection successful toward MySQL Database Server!
+[2023-12-14T21:07:41+0700] [Info] [Dynamic Giftbox] Loading the Dynamic Giftbox...
+[2023-12-14T21:07:41+0700] [Info] [LoadCrates] Load Query Sent
+[2023-12-14T21:07:41+0700] [Info] [LoadHouses] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadDynamicDoors] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadDynamicMapIcons] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadMailboxes] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadBusinesses] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadAuctions] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadTxtLabels] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadPlants] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [SpeedCameras] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadPayNSprays] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadArrestPoints] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadImpoundPoints] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadRelayForLifeTeams] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadBusinessSales] Loading data from database...
+[2023-12-14T21:07:41+0700] [Warning] Gangzone Y co-ordinates -1585.00 and -1726.00 out of order, inverting.
+[2023-12-14T21:07:41+0700] [Warning] Gangzone X co-ordinates 2240.00 and 2236.00 out of order, inverting.
+[2023-12-14T21:07:41+0700] [Warning] Gangzone Y co-ordinates -1032.00 and -1042.00 out of order, inverting.
+[2023-12-14T21:07:41+0700] [Info] [LoadTurfWars] 65 turfs loaded.
+[2023-12-14T21:07:41+0700] [Info] [LoadPaintballArenas] 10 paintball arenas loaded.
+[2023-12-14T21:07:41+0700] [Info] [LoadEventPoints] 0 event points loaded.
+[2023-12-14T21:07:41+0700] [Info] [LoadGates] Loading data from database...
+[2023-12-14T21:07:41+0700] [Info] [LoadElevatorStuff] 20 floors loaded.
+[2023-12-14T21:07:41+0700] [Info] [LoadFamilies] Dang tai du lieu tu database...
+[2023-12-14T21:07:41+0700] [Info] [LoadFamilyPoints] Loading Family Points from the database, please wait...
+[2023-12-14T21:07:41+0700] [Info] [MiscLoad] Misc Loaded
+[2023-12-14T21:07:41+0700] [Info] Resetting news...
+[2023-12-14T21:07:41+0700] [Info] Resetting default server variables..
+[2023-12-14T21:07:41+0700] [Info] Adjusted the server time...
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Loading Dynamic Static Vehicles...
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Dynamic Static Vehicles has been loaded.
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Loading Dynamic Pickups...
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Dynamic Pickups has been loaded.
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Loading 3D Text Labels...
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Dynamic 3D Text Labels has been loaded.
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Loading Dynamic Buttons...
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Dynamic Buttons has been loaded.
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Loading Dynamic Objects...
+[2023-12-14T21:07:41+0700] [Info] [Streamer] Dynamic Objects has been loaded.
+[2023-12-14T21:07:41+0700] [Info] [Textdraws] Loading Textdraws...
+[2023-12-14T21:07:41+0700] [Info] [Textdraws] Loaded textdraws.
+[2023-12-14T21:07:41+0700] [Info] [Dynamic Groups] Loading Dynamic Groups...
+[2023-12-14T21:07:41+0700] [Info] [Dynamic Groups] Loading Dynamic Groups Vehicles...
+[2023-12-14T21:07:41+0700] [Info] 
+-------------------------------------------
+[2023-12-14T21:07:41+0700] [Info] Cong Dong GTA Viet Nam
+
+[2023-12-14T21:07:41+0700] [Info] Copyright (C) GVN Group, LLC (2015-2100)
+[2023-12-14T21:07:41+0700] [Info] Giu moi ban quyen
+[2023-12-14T21:07:41+0700] [Info] -------------------------------------------
+
+[2023-12-14T21:07:41+0700] [Info] Da chay thanh cong gamemode...
+[2023-12-14T21:07:41+0700] [Info] Legacy Network started on port 7777
+[2023-12-14T21:07:41+0700] [Info] [Dynamic Giftbox] da tai thanh cong Dynamic giftbox.
+[2023-12-14T21:07:41+0700] [Info] [LoadCrates] Loading Crates Finished
+[2023-12-14T21:07:41+0700] [Info] [LoadHouses] 5000 ngoi nha duoc tai.
+[2023-12-14T21:07:41+0700] [Info] [LoadDynamicDoors] 3000 door duoc tai.
+[2023-12-14T21:07:41+0700] [Info] [LoadDynamicMapIcons] 400 icons map duoc tai.
+[2023-12-14T21:07:41+0700] [Info] [LoadMailboxes] 50 mailboxes duoc tai.
+[2023-12-14T21:07:41+0700] [Info] [LoadBusinesses] 200 businesses rehashed/loaded.
+[2023-12-14T21:07:41+0700] [Info] [LoadPlants] Successfully loaded 300 plants
+[2023-12-14T21:07:41+0700] [Info] [SpeedCameras] Khong the tai cac may ban toc do.
+[2023-12-14T21:07:41+0700] [Info] [LoadRelayForLifeTeams] 200 teams loaded.
+[2023-12-14T21:07:41+0700] [Info] TotalSold0: 0 | AmountMade0: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold1: 0 | AmountMade1: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold2: 0 | AmountMade2: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold3: 0 | AmountMade3: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold4: 0 | AmountMade4: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold5: 0 | AmountMade5: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold6: 0 | AmountMade6: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold7: 0 | AmountMade7: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold8: 0 | AmountMade8: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold9: 0 | AmountMade9: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold10: 0 | AmountMade10: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold11: 0 | AmountMade11: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold12: 0 | AmountMade12: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold13: 0 | AmountMade13: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold14: 0 | AmountMade14: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold15: 0 | AmountMade15: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold16: 0 | AmountMade16: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold17: 0 | AmountMade17: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold18: 0 | AmountMade18: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold19: 0 | AmountMade19: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold20: 0 | AmountMade20: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold21: 0 | AmountMade21: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold22: 0 | AmountMade22: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold23: 0 | AmountMade23: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold24: 0 | AmountMade24: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold25: 0 | AmountMade25: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold26: 0 | AmountMade26: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold27: 0 | AmountMade27: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold28: 0 | AmountMade28: 0
+[2023-12-14T21:07:41+0700] [Info] TotalSold29: 0 | AmountMade29: 0
+[2023-12-14T21:07:41+0700] [Info] Price0: 1000
+[2023-12-14T21:07:41+0700] [Info] Price1: 199
+[2023-12-14T21:07:41+0700] [Info] Price2: 180
+[2023-12-14T21:07:41+0700] [Info] Price3: 80
+[2023-12-14T21:07:41+0700] [Info] Price4: 100
+[2023-12-14T21:07:41+0700] [Info] Price5: 100
+[2023-12-14T21:07:41+0700] [Info] Price6: 250
+[2023-12-14T21:07:41+0700] [Info] Price7: 90
+[2023-12-14T21:07:41+0700] [Info] Price8: 25
+[2023-12-14T21:07:41+0700] [Info] Price9: 80
+[2023-12-14T21:07:41+0700] [Info] Price10: 25
+[2023-12-14T21:07:41+0700] [Info] Price11: 150
+[2023-12-14T21:07:41+0700] [Info] Price12: 200
+[2023-12-14T21:07:41+0700] [Info] Price13: 300
+[2023-12-14T21:07:41+0700] [Info] Price14: 299
+[2023-12-14T21:07:41+0700] [Info] Price15: 100
+[2023-12-14T21:07:41+0700] [Info] Price16: 60
+[2023-12-14T21:07:41+0700] [Info] Price17: 1
+[2023-12-14T21:07:41+0700] [Info] Price18: 1
+[2023-12-14T21:07:41+0700] [Info] Price19: 2
+[2023-12-14T21:07:41+0700] [Info] Price20: 11
+[2023-12-14T21:07:41+0700] [Info] Price21: 10000
+[2023-12-14T21:07:41+0700] [Info] Price22: 50
+[2023-12-14T21:07:41+0700] [Info] Price23: 149
+[2023-12-14T21:07:41+0700] [Info] Price24: 2
+[2023-12-14T21:07:41+0700] [Info] Price25: 300
+[2023-12-14T21:07:41+0700] [Info] Price26: 400
+[2023-12-14T21:07:41+0700] [Info] Price27: 500
+[2023-12-14T21:07:41+0700] [Info] Price28: 100
+[2023-12-14T21:07:41+0700] [Info] Price29: 29
+[2023-12-14T21:07:41+0700] [Info] [Family Points] 8 family points has been loaded.
+[2023-12-14T21:07:42+0700] [Info] Couldn't announce legacy network to open.mp list.
+[2023-12-14T21:07:42+0700] [Info] 	[Server Error] Status: 406
+[2023-12-14T21:07:42+0700] [Info] 	[Server Error] Message: {"error":"failed to query server: failed to resolve host: address 2001:ee0:55c8:1f0:fdf9:85af:b82e:42c8:7777: too many colons in address"}
+[2023-12-14T21:07:42+0700] [Info] This won't affect the server's behaviour.
+[2023-12-14T21:07:45+0700] [Info] [connection] incoming connection: 127.0.0.1:51924 id: 0
+[2023-12-14T21:07:45+0700] [Info] [join] au_jiz has joined the server (0:127.0.0.1)
+[2023-12-14T21:07:51+0700] [Info] au jiz has logged in.
+[2023-12-14T21:08:32+0700] [Info] [part] au_jiz has left the server (0:1)
+[2023-12-14T21:08:36+0700] [Info] 
+
+*** Streamer Plugin v2.9.5 by Incognito unloaded ***
+
+[2023-12-14T21:08:36+0700] [Info] plugin.mysql: Unloading plugin...
+[2023-12-14T21:08:36+0700] [Info] plugin.mysql: Plugin unloaded.
+[2023-12-14T21:08:36+0700] [Info]  
+[2023-12-14T21:08:36+0700] [Info]  ====================
+[2023-12-14T21:08:36+0700] [Info]  
+[2023-12-14T21:08:36+0700] [Info]   Whirlpool unloaded
+[2023-12-14T21:08:36+0700] [Info]  
+[2023-12-14T21:08:36+0700] [Info]  ====================
+[2023-12-14T21:08:36+0700] [Info]  
+[2023-12-14T21:08:36+0700] [Info] 
+[2023-12-14T21:08:36+0700] [Info]  ===============================
+[2023-12-14T21:08:36+0700] [Info] 
+[2023-12-14T21:08:36+0700] [Info]     sscanf component unloaded.  
+[2023-12-14T21:08:36+0700] [Info] 
+[2023-12-14T21:08:36+0700] [Info]  ===============================
+[2023-12-14T21:08:36+0700] [Info] 
