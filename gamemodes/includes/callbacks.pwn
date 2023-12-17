@@ -2259,7 +2259,8 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 
 public OnPlayerConnect(playerid) {
 	if(IsPlayerNPC(playerid)) return 1;
-
+	TogglePlayerSpectating(playerid, true);
+	
 	g_arrQueryHandle{playerid} = random(256);
 
 	TotalConnect++;

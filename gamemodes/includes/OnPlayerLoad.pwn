@@ -560,6 +560,7 @@ public OnPlayerLoad(playerid)
 	format(string, sizeof(string), "SERVER: Xin chao, %s.", GetPlayerNameEx(playerid));
 	SendClientMessageEx(playerid, COLOR_WHITE, string);
 	SetSpawnInfo(playerid, 0, PlayerInfo[playerid][pModel], PlayerInfo[playerid][pPos_x], PlayerInfo[playerid][pPos_y], PlayerInfo[playerid][pPos_z], 1.0, -1, -1, -1, -1, -1, -1);
+	TogglePlayerSpectating(playerid, false);
 	defer SkinDelay(playerid);
 
 	gPlayerLogged{playerid} = 1;
@@ -604,7 +605,6 @@ public OnPlayerLoad(playerid)
 		return 1;
 	}
 
-	TogglePlayerSpectating(playerid, true);
 	//SpawnPlayer(playerid);
 	format(string, sizeof(string), "~w~Xin chao,~n~~y~%s!", GetPlayerNameEx(playerid));
 	GameTextForPlayer(playerid, string, 5000, 1);
