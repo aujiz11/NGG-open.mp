@@ -1,6 +1,6 @@
 # Next Generation open.mp Version
 
-## _[Latest open.mp version v1.1.0.2612](https://github.com/openmultiplayer/open.mp/releases/tag/v1.1.0.2612)_
+## _[Latest open.mp version v1.2.0.2670](https://github.com/openmultiplayer/open.mp/releases/tag/v1.2.0.2670)_
 
 
 ***Next Generation Gaming*** là một gamemode được người Việt Nam tin tưởng và  sử dụng trên nền tảng SA-MP trong nhiều năm qua vì có hệ thống đầy đủ và lối chơi đơn giản. Tuy nhiên, gamemode này đã được phát triển từ rất lâu đời nên hầu như các thư viện đang dùng  đã cũ, vì thế hôm nay mình sẽ phát triển NGG Open Source trên nền tảng open.mp hoàn toàn miễn phí.
