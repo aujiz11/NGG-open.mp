@@ -4,7 +4,7 @@
 #define _INC_omp_player
 
 /**
- * <library name="omp_variable" summary="open.mp player functions.">
+ * <library name="omp_player" summary="open.mp player functions.">
  *   <license>
  *     This Source Code Form is subject to the terms of the Mozilla Public License,
  *     v. 2.0. If a copy of the MPL was not distributed with this file, You can
@@ -738,6 +738,19 @@ native bool:GetPlayerTime(playerid, &hour, &minute);
 
 /**
  * <library>omp_player</library>
+ * <summary>Checks whether this player has their in-game clock enabled.</summary>
+ * <param name="playerid">The player whose clock you want to check</param>
+ * <remarks>Time is not synced with other players! Time can be synced using <a href="#SetPlayerTime">SetPlayerTime</a>.</remarks>
+ * <remarks>Time will automatically advance 6 hours when the player dies.</remarks>
+ * <returns>
+ *   <b><c>1</c></b>: The clock is enabled.<br />
+ *   <b><c>0</c></b>: The clock isn't enabled, or the specified player does not exist.
+ * </returns>
+ */
+native bool:PlayerHasClockEnabled(playerid);
+
+/**
+ * <library>omp_player</library>
  * <summary>Toggle the in-game clock (top-right corner) for a specific player.  When this is enabled,
  * time will progress at 1 minute per second.  Weather will also interpolate (slowly change over time)
  * when set using <a href="#SetWeather">SetWeather</a>/<a href="#SetPlayerWeather">SetPlayerWeather</a>.</summary>
@@ -757,20 +770,20 @@ native bool:TogglePlayerClock(playerid, bool:toggle);
  * <summary>Plays the specified sound for a player.</summary>
  * <param name="playerid">The ID of the player for whom to play the sound</param>
  * <param name="soundid">The sound to play</param>
- * <param name="x">x coordinate for the sound to play at. (0 for no position)</param>
- * <param name="y">y coordinate for the sound to play at. (0 for no position)</param>
- * <param name="z">z coordinate for the sound to play at. (0 for no position)</param>
+ * <param name="x">x coordinate for the sound to play at. (<b><c>optional=0.0</c></b>)</param>
+ * <param name="y">y coordinate for the sound to play at. (<b><c>optional=0.0</c></b>)</param>
+ * <param name="z">z coordinate for the sound to play at. (<b><c>optional=0.0</c></b>)</param>
  * <seealso name="PlayCrimeReportForPlayer" />
  * <seealso name="PlayAudioStreamForPlayer" />
  * <seealso name="StopAudioStreamForPlayer" />
- * <remarks>Only use the coordinates if you want the sound to be played at a certain position.  Set
- * coordinates all to 0 to just play the sound.</remarks>
+ * <remarks>Only use the coordinates if you want the sound to be played at a certain position. By
+ * default, the sound will be played with no position at a certain position.</remarks>
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.<br />
  *   <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.
  * </returns>
  */
-native bool:PlayerPlaySound(playerid, soundid, Float:x, Float:y, Float:z);
+native bool:PlayerPlaySound(playerid, soundid, Float:x = 0.0, Float:y = 0.0, Float:z = 0.0);
 
 /**
  * <library>omp_player</library>
@@ -1739,6 +1752,14 @@ native GetPlayerColor(playerid);
 
 /**
  * <library>omp_player</library>
+ * <summary>Gets the default colour for this player ID.</summary>
+ * <param name="playerid">The ID of the player to get the colour of.  Doesn't need to be connected</param>
+ * <seealso name="GetPlayerColor" />
+ */
+native GetDefaultPlayerColour(playerid);
+
+/**
+ * <library>omp_player</library>
  * <summary>Sets the name of a player.</summary>
  * <param name="playerid">The ID of the player to set the name of</param>
  * <param name="name">The name to set.  Must be 1-24 characters long and only contain valid characters
@@ -1948,7 +1969,7 @@ native GetPlayerMarkerForPlayer(playerid, targetid);
  * file to npcmodes/recordings to use for playback</param>
  * <seealso name="StopRecordingPlayerData" />
  */
-forward bool:StartRecordingPlayerData(playerid, PLAYER_RECORDING_TYPE:recordType, const recordFile[]);
+native bool:StartRecordingPlayerData(playerid, PLAYER_RECORDING_TYPE:recordType, const recordFile[]);
 
 /**
  * <library>omp_player</library>
@@ -1957,7 +1978,7 @@ forward bool:StartRecordingPlayerData(playerid, PLAYER_RECORDING_TYPE:recordType
  * <param name="playerid">The player you want to stop the recordings of</param>
  * <seealso name="StartRecordingPlayerData" />
  */
-forward bool:StopRecordingPlayerData(playerid);
+native bool:StopRecordingPlayerData(playerid);
 
 /**
  * <library>omp_player</library>
@@ -2843,8 +2864,8 @@ native bool:ArePlayerWeaponsAllowed(playerid);
 
 /*
 native # Deprecated();
-native Â Â Â Â Â Â Â Â Â Â Deprecated(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â Â Â Deprecated(
+native Â Â Â Â Â ====================(
 native
 */
 

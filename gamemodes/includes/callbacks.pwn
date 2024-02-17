@@ -587,7 +587,7 @@ public OnPlayerUpdate(playerid)
 }
 
 public OnPlayerEditObject(playerid, playerobject, objectid, EDIT_RESPONSE:response, 
-					Float:fX, Float:fY, Float:fZ, Float:rotationX, Float:rotationY, Float:rotationZ)
+		Float:fX, Float:fY, Float:fZ, Float:fRotX, Float:fRotY, Float:fRotZ)
 {
 	return 1;
 }

@@ -256,8 +256,8 @@ static stock PLAYER_MARKERS_MODE:_@PLAYER_MARKERS_MODE() { return __PLAYER_MARKE
 */
 /*
 native # Pawn Utilities();
-native Â Â Â Â Â Â Â Â PawnÂ Utilities(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â PawnÂ Utilities(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -711,8 +711,8 @@ native void:CreateExplosion(Float:x, Float:y, Float:z, type, Float:radius);
 
 /*
 native # Maths();
-native Â Â Â Â Â Â Â Â Â Â Â Â Maths(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â Â Â Â Â Maths(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -824,8 +824,8 @@ native Float:ATan2(Float:y, Float:x) = atan2;
 
 /*
 native # Server Config();
-native Â Â Â Â Â Â Â Â ServerÂ Config(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â ServerÂ Config(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -1002,8 +1002,8 @@ forward E_SERVER_RULE_FLAGS:GetServerRuleFlags(const rule[]);
 
 /*
 native # Client Config();
-native Â Â Â Â Â Â Â Â ClientÂ Config(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â ClientÂ Config(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -1273,8 +1273,8 @@ native EnableZoneNames(bool:enable);
 
 /*
 native # NPCs();
-native Â Â Â Â Â Â Â Â Â Â Â Â Â NPCs(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â Â Â Â Â Â NPCs(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -1310,8 +1310,8 @@ native ConnectNPC(const name[], const script[]);
 
 /*
 native # Deprecated();
-native Â Â Â Â Â Â Â Â Â Â Deprecated(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â Â Â Deprecated(
+native Â Â Â Â Â ====================(
 native
 */
 
