@@ -1,21 +1,43 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "build-normal",
-        "type": "shell",
-        "command": "${workspaceRoot}/qawno/pawncc.exe",
-        "args": ["'${fileBasename}'", "'-D${fileDirname}'", "'-;+'", "'-(+'", "'-d3'"],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "isBackground": false,
-        "presentation": {
-          "reveal": "silent",
-          "panel": "dedicated"
-        },
-        "problemMatcher": "$pawncc"
-      }
-    ]
-  }
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build-normal",
+			"type": "shell",
+			"command": "${workspaceRoot}/qawno/pawncc.exe",
+			"runOptions": {
+				"instanceLimit": 1,
+			},
+			"args": [
+				"${file}",
+				"-Dgamemodes",
+				"'-;+'",
+				"'-(+'",
+				"'-d3'"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"isBackground": false,
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": {
+				"owner": "pawn",
+				"fileLocation": [
+					"relative",
+					"${workspaceRoot}"
+				],
+				"pattern": {
+					"regexp": "^(.*?)\\(([0-9]*)[- 0-9]*\\) \\: (fatal error|error|warning) [0-9]*\\: (.*)$",
+					"file": 1,
+					"location": 2,
+					"severity": 3,
+					"message": 4
+				}
+			}
+		}
+	],
+}
