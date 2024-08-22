@@ -2,6 +2,12 @@
 	#endinput
 #endif
 
+#if defined SAMP_COMPAT
+	#if !defined OPEN_MP_NO_WRAPPER_WARNING
+		#define OPEN_MP_NO_WRAPPER_WARNING
+	#endif
+#endif
+
 #if defined OPEN_MP_NO_WRAPPER_WARNING
 	#include <open.mp>
 	#endinput
@@ -20,4 +26,3 @@
 // This is just a backwards-compatible wrapper.
 #warning Using <a_http> legacy wrapper.  Include <open.mp> directly.
 #include <open.mp>
-

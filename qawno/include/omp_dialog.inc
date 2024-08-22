@@ -9,7 +9,7 @@
  *     This Source Code Form is subject to the terms of the Mozilla Public License,
  *     v. 2.0. If a copy of the MPL was not distributed with this file, You can
  *     obtain one at http://mozilla.org/MPL/2.0/.
- *    
+ *
  *     The original code is copyright (c) 2023, open.mp team and contributors.
  *   </license>
  *   <summary pawndoc="true">
@@ -146,24 +146,9 @@ native bool:GetPlayerDialogData(playerid, &DIALOG_STYLE:style, title[], titleSiz
 native GetPlayerDialogID(playerid);
 
 /*
-                                                                                                                             
-    88888888ba,                                                                                                          88  
-    88      `"8b                                                                              ,d                         88  
-    88        `8b                                                                             88                         88  
-    88         88   ,adPPYba,  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   ,adPPYba,  ,adPPYYba,  MM88MMM  ,adPPYba,   ,adPPYb,88  
-    88         88  a8P_____88  88P'    "8a  88P'   "Y8  a8P_____88  a8"     ""  ""     `Y8    88    a8P_____88  a8"    `Y88  
-    88         8P  8PP"""""""  88       d8  88          8PP"""""""  8b          ,adPPPPP88    88    8PP"""""""  8b       88  
-    88      .a8P   "8b,   ,aa  88b,   ,a8"  88          "8b,   ,aa  "8a,   ,aa  88,    ,88    88,   "8b,   ,aa  "8a,   ,d88  
-    88888888Y"'     `"Ybbd8"'  88`YbbdP"'   88           `"Ybbd8"'   `"Ybbd8"'  `"8bbdP"Y8    "Y888  `"Ybbd8"'   `"8bbdP"Y8  
-                               88                                                                                            
-                               88                                                                                            
-
-*/
-
-/*
 native # Deprecated();
-native           Deprecated(
-native      ====================(
+native           Deprecated(
+native      ====================(
 native
 */
 
@@ -180,7 +165,7 @@ native
  *   The ID, or <b><c>INVALID_DIALOG_ID</c></b> if there's no player or open dialog.<br />
  * </returns>
  */
-#pragma deprecated Use `GetPlayerDialogID`
+#pragma deprecated Use `GetPlayerDialogID`.
 native GetPlayerDialog(playerid) = GetPlayerDialogID;
 
 /*
@@ -226,4 +211,3 @@ native GetPlayerDialog(playerid) = GetPlayerDialogID;
  * </returns>
  */
 forward OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]);
-

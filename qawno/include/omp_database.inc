@@ -9,7 +9,7 @@
  *     This Source Code Form is subject to the terms of the Mozilla Public License,
  *     v. 2.0. If a copy of the MPL was not distributed with this file, You can
  *     obtain one at http://mozilla.org/MPL/2.0/.
- *    
+ *
  *     The original code is copyright (c) 2023, open.mp team and contributors.
  *   </license>
  *   <summary pawndoc="true">
@@ -82,25 +82,18 @@ static stock SQLITE_OPEN:_@SQLITE_OPEN() { return __SQLITE_OPEN; }
 #define SQLITE_OPEN_EXRESCODE                  (SQLITE_OPEN:0x02000000)
 
 /*
-                                                                                                                        
-    88b           d88                        88                                                 db         88888888ba   88  
-    888b         d888                        88                                                d88b        88      "8b  88  
-    88`8b       d8'88                        88                                               d8'`8b       88      ,8P  88  
-    88 `8b     d8' 88   ,adPPYba,    ,adPPYb,88   ,adPPYba,  8b,dPPYba,  8b,dPPYba,          d8'  `8b      88aaaaaa8P'  88  
-    88  `8b   d8'  88  a8"     "8a  a8"    `Y88  a8P_____88  88P'   "Y8  88P'   `"8a        d8YaaaaY8b     88""""""'    88  
-    88   `8b d8'   88  8b       d8  8b       88  8PP"""""""  88          88       88       d8""""""""8b    88           88  
-    88    `888'    88  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  88          88       88      d8'        `8b   88           88  
-    88     `8'     88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'  88          88       88     d8'          `8b  88           88  
-                                                                                                                        
-                                                                                                                        
+                                                                           
+    888b      88                       88                                      
+    8888b     88                ,d     ""                                      
+    88 `8b    88                88                                             
+    88  `8b   88  ,adPPYYba,  MM88MMM  88  8b       d8   ,adPPYba,  ,adPPYba,  
+    88   `8b  88  ""     `Y8    88     88  `8b     d8'  a8P_____88  I8[    ""  
+    88    `8b 88  ,adPPPPP88    88     88   `8b   d8'   8PP"""""""   `"Y8ba,   
+    88     `8888  88,    ,88    88,    88    `8b,d8'    "8b,   ,aa  aa    ]8I  
+    88      `888  `"8bbdP"Y8    "Y888  88      "8"       `"Ybbd8"'  `"YbbdP"'  
+                                                                           
+                                                                           
 
-*/
-
-/*
-native # Modern API();
-native           Modern API(
-native      ====================(
-native
 */
 
 /**
@@ -293,233 +286,146 @@ native DB_GetDatabaseConnectionCount();
  */
 native DB_GetDatabaseResultSetCount();
 
-/*
-                                                                                                                             
-    88888888ba,                                                                                                          88  
-    88      `"8b                                                                              ,d                         88  
-    88        `8b                                                                             88                         88  
-    88         88   ,adPPYba,  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   ,adPPYba,  ,adPPYYba,  MM88MMM  ,adPPYba,   ,adPPYb,88  
-    88         88  a8P_____88  88P'    "8a  88P'   "Y8  a8P_____88  a8"     ""  ""     `Y8    88    a8P_____88  a8"    `Y88  
-    88         8P  8PP"""""""  88       d8  88          8PP"""""""  8b          ,adPPPPP88    88    8PP"""""""  8b       88  
-    88      .a8P   "8b,   ,aa  88b,   ,a8"  88          "8b,   ,aa  "8a,   ,aa  88,    ,88    88,   "8b,   ,aa  "8a,   ,d88  
-    88888888Y"'     `"Ybbd8"'  88`YbbdP"'   88           `"Ybbd8"'   `"Ybbd8"'  `"8bbdP"Y8    "Y888  `"Ybbd8"'   `"8bbdP"Y8  
-                               88                                                                                            
-                               88                                                                                            
-
-*/
-
-/*
-native # Deprecated Legacy();
-native       Deprecated Legacy(
-native      ====================(
-native
-*/
-
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_Open`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_Open`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native DB:db_open(const name[]) = DB_Open;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_Close`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_Close`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native bool:db_close(DB:db) = DB_Close;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_ExecuteQuery`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_ExecuteQuery`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native DBResult:db_query(DB:db, const query[]) = DB_ExecuteQuery;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_FreeResultSet`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_FreeResultSet`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native bool:db_free_result(DBResult:result) = DB_FreeResultSet;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetRowCount`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetRowCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_num_rows(DBResult:result) = DB_GetRowCount;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_SelectNextRow`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_SelectNextRow`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native bool:db_next_row(DBResult:result) = DB_SelectNextRow;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldCount`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_num_fields(DBResult:result) = DB_GetFieldCount;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldName`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native bool:db_field_name(DBResult:result, field, output[], size = sizeof (output)) = DB_GetFieldName;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldString`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldString`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native bool:db_get_field(DBResult:result, field, output[], size = sizeof (output)) = DB_GetFieldString;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldInt`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldInt`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_get_field_int(DBResult:result, field = 0) = DB_GetFieldInt;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldFloat`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldFloat`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native Float:db_get_field_float(DBResult:result, field = 0) = DB_GetFieldFloat;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldStringByName`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldStringByName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native bool:db_get_field_assoc(DBResult:result, const field[], output[], size = sizeof (output)) = DB_GetFieldStringByName;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldIntByName`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldIntByName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_get_field_assoc_int(DBResult:result, const field[]) = DB_GetFieldIntByName;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetFieldFloatByName`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetFieldFloatByName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native Float:db_get_field_assoc_float(DBResult:result, const field[]) = DB_GetFieldFloatByName;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetMemHandle`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetMemHandle`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_get_mem_handle(DB:db) = DB_GetMemHandle;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetLegacyDBResult`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetLegacyDBResult`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_get_result_mem_handle(DBResult:result) = DB_GetLegacyDBResult;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetDatabaseConnectionCount`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetDatabaseConnectionCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_debug_openfiles() = DB_GetDatabaseConnectionCount;
 
 /**
  * <library>omp_database</library>
  */
-#pragma deprecated Use `DB_GetDatabaseResultSetCount`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `DB_GetDatabaseResultSetCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
 native db_debug_openresults() = DB_GetDatabaseResultSetCount;
-
-/*
-                                                                                                                             
-    88888888ba,                                                                                                          88  
-    88      `"8b                                                                              ,d                         88  
-    88        `8b                                                                             88                         88  
-    88         88   ,adPPYba,  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   ,adPPYba,  ,adPPYYba,  MM88MMM  ,adPPYba,   ,adPPYb,88  
-    88         88  a8P_____88  88P'    "8a  88P'   "Y8  a8P_____88  a8"     ""  ""     `Y8    88    a8P_____88  a8"    `Y88  
-    88         8P  8PP"""""""  88       d8  88          8PP"""""""  8b          ,adPPPPP88    88    8PP"""""""  8b       88  
-    88      .a8P   "8b,   ,aa  88b,   ,a8"  88          "8b,   ,aa  "8a,   ,aa  88,    ,88    88,   "8b,   ,aa  "8a,   ,d88  
-    88888888Y"'     `"Ybbd8"'  88`YbbdP"'   88           `"Ybbd8"'   `"Ybbd8"'  `"8bbdP"Y8    "Y888  `"Ybbd8"'   `"8bbdP"Y8  
-                               88                                                                                            
-                               88                                                                                            
-
-*/
-
-/*
-native # Deprecated Compat();
-native       Deprecated Compat(
-native      ====================(
-native
-*/
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_ExecuteQuery`
-native DBResult:DB_Query(DB:db, const query[]) = DB_ExecuteQuery;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_FreeResultSet`
-native bool:DB_FreeResult(DBResult:result) = DB_FreeResultSet;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetRowCount`
-native DB_NumRows(DBResult:result) = DB_GetRowCount;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_SelectNextRow`
-native bool:DB_NextRow(DBResult:result) = DB_SelectNextRow;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetFieldCount`
-native DB_NumFields(DBResult:result) = DB_GetFieldCount;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetFieldName`
-native bool:DB_FieldName(DBResult:result, field, output[], size = sizeof (output)) = DB_GetFieldName;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetFieldString`
-native bool:DB_GetField(DBResult:result, field, output[], size = sizeof (output)) = DB_GetFieldString;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetFieldStringByName`
-native bool:DB_GetFieldAssoc(DBResult:result, const field[], output[], size = sizeof (output)) = DB_GetFieldStringByName;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetFieldIntByName`
-native DB_GetFieldAssocInt(DBResult:result, const field[]) = DB_GetFieldIntByName;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetFieldFloatByName`
-native Float:DB_GetFieldAssocFloat(DBResult:result, const field[]) = DB_GetFieldFloatByName;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetLegacyDBResult`
-native DB_GetResultMemHandle(DBResult:result) = DB_GetLegacyDBResult;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetDatabaseConnectionCount`
-native DB_DebugOpenFiles() = DB_GetDatabaseConnectionCount;
-
-/**
- * <library>omp_database</library>
- */
-#pragma deprecated Use `DB_GetDatabaseResultSetCount`
-native DB_DebugOpenResults() = DB_GetDatabaseResultSetCount;
-

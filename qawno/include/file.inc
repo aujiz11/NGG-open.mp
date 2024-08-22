@@ -348,7 +348,7 @@ native bool:fattrib(const filename[], timestamp = 0, attrib = 0x0F);
  * <param name="size">The maximum size of parameter name (optional=<b><c>sizeof (name)</c></b>)</param>
  * <returns><b><c>true</c></b> on success, <b><c>false</c></b> on failure.</returns>
  */
-native bool:fmatch(filename[], const pattern[], index = 0, size = sizeof (filename));
+native bool:fmatch(const filename[], const pattern[], index = 0, size = sizeof (filename));
 
 /**
  * <library>file</library>
@@ -464,13 +464,11 @@ native bool:dfind(const pattern[], filename[], size = sizeof (filename), &idx);
 /**
  * <library>file</library>
  */
-#pragma deprecated Use `fcreatedir`.
 native bool:dcreate(const name[]) = fcreatedir;
 
 /**
  * <library>file</library>
  */
-#pragma deprecated Use `frename`.
 native bool:drename(const oldname[], const newname[]) = frename;
 
 /**
@@ -590,4 +588,3 @@ forward bool:operator>=(_:a, File:b);
  * <library>file</library>
  */
 forward bool:operator>=(File:a, _:b);
-

@@ -9,7 +9,7 @@
  *     This Source Code Form is subject to the terms of the Mozilla Public License,
  *     v. 2.0. If a copy of the MPL was not distributed with this file, You can
  *     obtain one at http://mozilla.org/MPL/2.0/.
- *    
+ *
  *     The original code is copyright (c) 2023, open.mp team and contributors.
  *   </license>
  *   <summary pawndoc="true">
@@ -241,23 +241,24 @@ static stock PLAYER_MARKERS_MODE:_@PLAYER_MARKERS_MODE() { return __PLAYER_MARKE
 #define PLAYER_MARKERS_MODE_UNKNOWN UNKNOWN_PLAYER_MARKERS_MODE
 
 /*
-                                                                                                                                    
-    88888888ba                                                   88        88           88  88  88           88                         
-    88      "8b                                                  88        88    ,d     ""  88  ""    ,d     ""                         
-    88      ,8P                                                  88        88    88         88        88                                
-    88aaaaaa8P'  ,adPPYYba,  8b      db      d8  8b,dPPYba,      88        88  MM88MMM  88  88  88  MM88MMM  88   ,adPPYba,  ,adPPYba,  
-    88""""""'    ""     `Y8  `8b    d88b    d8'  88P'   `"8a     88        88    88     88  88  88    88     88  a8P_____88  I8[    ""  
-    88           ,adPPPPP88   `8b  d8'`8b  d8'   88       88     88        88    88     88  88  88    88     88  8PP"""""""   `"Y8ba,   
-    88           88,    ,88    `8bd8'  `8bd8'    88       88     Y8a.    .a8P    88,    88  88  88    88,    88  "8b,   ,aa  aa    ]8I  
-    88           `"8bbdP"Y8      YP      YP      88       88      `"Y8888Y"'     "Y888  88  88  88    "Y888  88   `"Ybbd8"'  `"YbbdP"'  
-                                                                                                                                        
-                                                                                                                                        
+                                                                           
+    888b      88                       88                                      
+    8888b     88                ,d     ""                                      
+    88 `8b    88                88                                             
+    88  `8b   88  ,adPPYYba,  MM88MMM  88  8b       d8   ,adPPYba,  ,adPPYba,  
+    88   `8b  88  ""     `Y8    88     88  `8b     d8'  a8P_____88  I8[    ""  
+    88    `8b 88  ,adPPPPP88    88     88   `8b   d8'   8PP"""""""   `"Y8ba,   
+    88     `8888  88,    ,88    88,    88    `8b,d8'    "8b,   ,aa  aa    ]8I  
+    88      `888  `"8bbdP"Y8    "Y888  88      "8"       `"Ybbd8"'  `"YbbdP"'  
+                                                                           
+                                                                           
 
 */
+
 /*
 native # Pawn Utilities();
-native Â Â Â Â Â Â Â Â PawnÂ Utilities(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â PawnÂ Utilities(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -494,7 +495,7 @@ native SetTimerEx(const functionName[], interval, bool:repeating, const specifie
  * <seealso name="SetTimerEx" />
  * <returns>This function always returns <b><c>0</c></b>.</returns>
  */
-native void:KillTimer(timerid);
+native bool:KillTimer(timerid);
 
 /**
  * <library>omp_core</library>
@@ -577,7 +578,20 @@ native CallLocalFunction(const functionName[], const specifiers[] = "", OPEN_MP_
  * <seealso name="TextDrawShowForAll" />
  * <returns>This function always returns <b><c>1</c></b>.</returns>
  */
-native void:GameTextForAll(const format[], time, style, OPEN_MP_TAGS:...);
+native bool:GameTextForAll(const format[], time, style, OPEN_MP_TAGS:...);
+
+/**
+ * <library>omp_core</library>
+ * <summary>Shows 'game text' (on-screen text) for a certain length of time for all players.</summary>
+ * <param name="format">The text to be displayed or formatted</param>
+ * <param name="time">The duration of the text being shown in milliseconds</param>
+ * <param name="style">The style of text to be displayed</param>
+ * <seealso name="GameTextForPlayer" />
+ * <seealso name="TextDrawShowForAll" />
+ * <returns>This function always returns <b><c>1</c></b>.</returns>
+ */
+#pragma deprecated Use `GameTextForAll`
+native bool:GameTextForAllf(const format[], time, style, OPEN_MP_TAGS:...) = GameTextForAll;
 
 /**
  * <library>omp_player</library>
@@ -588,7 +602,7 @@ native void:GameTextForAll(const format[], time, style, OPEN_MP_TAGS:...);
  * <seealso name="HideGameTextForPlayer" />
  * <returns>This function always returns <b><c>1</c></b>.</returns>
  */
-native void:HideGameTextForAll(style);
+native bool:HideGameTextForAll(style);
 
 /**
  * <library>omp_core</library>
@@ -602,7 +616,22 @@ native void:HideGameTextForAll(style);
  *  It will result in crashes otherwise.</remarks>
  * <returns>This function always returns <b><c>1</c></b>.</returns>
  */
-native void:SendClientMessageToAll(colour, const format[], OPEN_MP_TAGS:...);
+native bool:SendClientMessageToAll(colour, const format[], OPEN_MP_TAGS:...);
+
+/**
+ * <library>omp_player</library>
+ * <summary>Displays a message in chat to all players.  This is a multi-player equivalent of
+ * <a href="#SendClientMessage">SendClientMessage</a>.</summary>
+ * <param name="colour">The colour of the message (<b>RGBA</b>)</param>
+ * <param name="format">The message to show (<b>max 144 characters</b>).  Optionally formatted.</param>
+ * <seealso name="SendClientMessage" />
+ * <seealso name="SendPlayerMessageToAll" />
+ * <remarks>Avoid using format specifiers in your messages without formatting the string that is sent.
+ *  It will result in crashes otherwise.</remarks>
+ * <returns>This function always returns <b><c>1</c></b>.</returns>
+ */
+#pragma deprecated Use `SendClientMessageToAll`
+native bool:SendClientMessageToAllf(colour, const format[], OPEN_MP_TAGS:...) = SendClientMessageToAll;
 
 /**
  * <library>omp_core</library>
@@ -617,6 +646,21 @@ native void:SendClientMessageToAll(colour, const format[], OPEN_MP_TAGS:...);
  *  It will result in crashes otherwise.</remarks>
  */
 native bool:SendPlayerMessageToAll(senderid, const format[], OPEN_MP_TAGS:...);
+
+/**
+ * <library>omp_core</library>
+ * <summary>Sends a message in the name of a player to all other players on the server.  The line will
+ * start with the sender's name in their colour, followed by the message in white.</summary>
+ * <param name="senderid">The ID of the sender.  If invalid, the message will not be sent</param>
+ * <param name="format">The message that will be sent.  May be optionally formatted.</param>
+ * <seealso name="SendPlayerMessageToPlayer" />
+ * <seealso name="SendClientMessageToAll" />
+ * <seealso name="OnPlayerText" />
+ * <remarks>Avoid using format specifiers in your messages without formatting the string that is sent.
+ *  It will result in crashes otherwise.</remarks>
+ */
+#pragma deprecated Use `SendPlayerMessageToAll`
+native bool:SendPlayerMessageToAllf(senderid, const format[], OPEN_MP_TAGS:...) = SendPlayerMessageToAll;
 
 /**
  * <library>omp_core</library>
@@ -692,27 +736,12 @@ native GetAnimationName(index, animationLibrary[], len1 = sizeof (animationLibra
  * <returns>This function always returns <b><c>1</c></b>, even when the explosion type and/or radius
  * values are invalid.</returns>
  */
-native void:CreateExplosion(Float:x, Float:y, Float:z, type, Float:radius);
-
-/*
-                                                                
-    88b           d88                       88                      
-    888b         d888                ,d     88                      
-    88`8b       d8'88                88     88                      
-    88 `8b     d8' 88  ,adPPYYba,  MM88MMM  88,dPPYba,   ,adPPYba,  
-    88  `8b   d8'  88  ""     `Y8    88     88P'    "8a  I8[    ""  
-    88   `8b d8'   88  ,adPPPPP88    88     88       88   `"Y8ba,   
-    88    `888'    88  88,    ,88    88,    88       88  aa    ]8I  
-    88     `8'     88  `"8bbdP"Y8    "Y888  88       88  `"YbbdP"'  
-                                                                    
-                                                                
-
-*/
+native bool:CreateExplosion(Float:x, Float:y, Float:z, type, Float:radius);
 
 /*
 native # Maths();
-native Â Â Â Â Â Â Â Â Â Â Â Â Maths(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â Â Â Â Â Maths(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -808,24 +837,9 @@ native Float:atan2(Float:y, Float:x);
 native Float:ATan2(Float:y, Float:x) = atan2;
 
 /*
-                                                                                                                                               
-     ad88888ba                                                                     ,ad8888ba,                               ad88  88               
-    d8"     "8b                                                                   d8"'    `"8b                             d8"    ""               
-    Y8,                                                                          d8'                                       88                      
-    `Y8aaaaa,     ,adPPYba,  8b,dPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,     88              ,adPPYba,   8b,dPPYba,  MM88MMM  88   ,adPPYb,d8  
-      `"""""8b,  a8P_____88  88P'   "Y8  `8b     d8'  a8P_____88  88P'   "Y8     88             a8"     "8a  88P'   `"8a   88     88  a8"    `Y88  
-            `8b  8PP"""""""  88           `8b   d8'   8PP"""""""  88             Y8,            8b       d8  88       88   88     88  8b       88  
-    Y8a     a8P  "8b,   ,aa  88            `8b,d8'    "8b,   ,aa  88              Y8a.    .a8P  "8a,   ,a8"  88       88   88     88  "8a,   ,d88  
-     "Y88888P"    `"Ybbd8"'  88              "8"       `"Ybbd8"'  88               `"Y8888Y"'    `"YbbdP"'   88       88   88     88   `"YbbdP"Y8  
-                                                                                                                                       aa,    ,88  
-                                                                                                                                        "Y8bbdP"   
-
-*/
-
-/*
 native # Server Config();
-native Â Â Â Â Â Â Â Â ServerÂ Config(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â ServerÂ Config(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -868,7 +882,7 @@ native GetMaxPlayers();
  * <library>omp_core</library>
  * <param name="seconds">The delay between loading main scripts, in seconds.</param>
  */
-native SetModeRestartTime(Float:seconds);
+native bool:SetModeRestartTime(Float:seconds);
 
 /**
  * <library>omp_core</library>
@@ -975,35 +989,10 @@ native bool:RemoveServerRule(const rule[]);
  */
 native bool:IsValidServerRule(const rule[]);
 
-/**
- * <library>omp_core</library>
- */
-forward bool:SetServerRuleFlags(const rule[], E_SERVER_RULE_FLAGS:flags);
-
-/**
- * <library>omp_core</library>
- */
-forward E_SERVER_RULE_FLAGS:GetServerRuleFlags(const rule[]);
-
-/*
-                                                                                                                             
-      ,ad8888ba,   88  88                                        ,ad8888ba,                               ad88  88               
-     d8"'    `"8b  88  ""                            ,d         d8"'    `"8b                             d8"    ""               
-    d8'            88                                88        d8'                                       88                      
-    88             88  88   ,adPPYba,  8b,dPPYba,  MM88MMM     88              ,adPPYba,   8b,dPPYba,  MM88MMM  88   ,adPPYb,d8  
-    88             88  88  a8P_____88  88P'   `"8a   88        88             a8"     "8a  88P'   `"8a   88     88  a8"    `Y88  
-    Y8,            88  88  8PP"""""""  88       88   88        Y8,            8b       d8  88       88   88     88  8b       88  
-     Y8a.    .a8P  88  88  "8b,   ,aa  88       88   88,        Y8a.    .a8P  "8a,   ,a8"  88       88   88     88  "8a,   ,d88  
-      `"Y8888Y"'   88  88   `"Ybbd8"'  88       88   "Y888       `"Y8888Y"'    `"YbbdP"'   88       88   88     88   `"YbbdP"Y8  
-                                                                                                                     aa,    ,88  
-                                                                                                                      "Y8bbdP"   
-
-*/
-
 /*
 native # Client Config();
-native Â Â Â Â Â Â Â Â ClientÂ Config(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â ClientÂ Config(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -1018,7 +1007,7 @@ native
  * to use it in OnGameModeInit).  It will not remove a connected player's markers.</remarks>
  * <returns>This function always returns <b><c>1</c></b>.</returns>
  */
-native DisableInteriorEnterExits();
+native void:DisableInteriorEnterExits();
 
 /**
  * <library>omp_core</library>
@@ -1027,7 +1016,7 @@ native DisableInteriorEnterExits();
  * <seealso name="ShowPlayerNameTagForPlayer" />
  * <remarks>This can not be reversed until the server restarts.</remarks>
  */
-native DisableNameTagLOS();
+native void:DisableNameTagLOS();
 
 /**
  * <library>omp_core</library>
@@ -1040,7 +1029,7 @@ native DisableNameTagLOS();
  * <seealso name="SendPlayerMessageToAll" />
  * <seealso name="OnPlayerText" />
  */
-native LimitGlobalChatRadius(Float:chatRadius);
+native bool:LimitGlobalChatRadius(Float:chatRadius);
 
 /**
  * <library>omp_core</library>
@@ -1050,14 +1039,14 @@ native LimitGlobalChatRadius(Float:chatRadius);
  * <seealso name="SetPlayerMarkerForPlayer" />
  * <seealso name="LimitGlobalChatRadius" />
  */
-native LimitPlayerMarkerRadius(Float:markerRadius);
+native bool:LimitPlayerMarkerRadius(Float:markerRadius);
 
 /**
  * <library>omp_core</library>
  * <summary>Set the name of the game mode, which appears in the server browser.</summary>
  * <param name="format">The gamemode name to display.  May be optionally formatted.</param>
  */
-native SetGameModeText(const format[], OPEN_MP_TAGS:...);
+native bool:SetGameModeText(const format[], OPEN_MP_TAGS:...);
 
 /**
  * <library>omp_core</library>
@@ -1160,7 +1149,7 @@ native void:ShowPlayerMarkers(PLAYER_MARKERS_MODE:mode);
  * <remarks>Not using this function causes two-handed weapons (not dual-handed - a single weapon that
  * is held by both hands) to be held in only one hand.</remarks>
  */
-native UsePlayerPedAnims();
+native void:UsePlayerPedAnims();
 
 /**
  * <library>omp_core</library>
@@ -1181,7 +1170,7 @@ native GetWorldTime();
 /**
  * <library>omp_core</library>
  */
-native ToggleChatTextReplacement(bool:enable);
+native void:ToggleChatTextReplacement(bool:enable);
 
 /**
  * <library>omp_core</library>
@@ -1195,7 +1184,7 @@ native bool:ChatTextReplacementToggled();
  * <param name="enable"><b><c>1</c></b> to enable stunt bonuses or <b><c>0</c></b> to disable them</param>
  * <seealso name="EnableStuntBonusForPlayer" />
  */
-native EnableStuntBonusForAll(bool:enable);
+native void:EnableStuntBonusForAll(bool:enable);
 
 /**
  * <library>omp_core</library>
@@ -1235,17 +1224,17 @@ native bool:AreInteriorWeaponsAllowed();
 
 /**
  * <library>omp_core</library>
- * <summary>Are the animations missing from some versions enabled?</summary>
- * <seealso name="EnableAllAnimations" />
- */
-native bool:AreAllAnimationsEnabled();
-
-/**
- * <library>omp_core</library>
  * <summary>Allow use of the animations missing from some versions.</summary>
  * <seealso name="AreAllAnimationsEnabled" />
  */
 native void:EnableAllAnimations(bool:enable);
+
+/**
+ * <library>omp_core</library>
+ * <summary>Are the animations missing from some versions enabled?</summary>
+ * <seealso name="EnableAllAnimations" />
+ */
+native bool:AreAllAnimationsEnabled();
 
 /**
  * <library>omp_core</library>
@@ -1254,27 +1243,12 @@ native void:EnableAllAnimations(bool:enable);
  * set in the callback <a href="#OnGameModeInit">OnGameModeInit</a>.</summary>
  * <param name="enable">A toggle option for whether or not you'd like zone names on or off</param>
  */
-native EnableZoneNames(bool:enable);
-
-/*
-                                                     
-    888b      88  88888888ba     ,ad8888ba,              
-    8888b     88  88      "8b   d8"'    `"8b             
-    88 `8b    88  88      ,8P  d8'                       
-    88  `8b   88  88aaaaaa8P'  88             ,adPPYba,  
-    88   `8b  88  88""""""'    88             I8[    ""  
-    88    `8b 88  88           Y8,             `"Y8ba,   
-    88     `8888  88            Y8a.    .a8P  aa    ]8I  
-    88      `888  88             `"Y8888Y"'   `"YbbdP"'  
-                                                     
-                                                     
-
-*/
+native void:EnableZoneNames(bool:enable);
 
 /*
 native # NPCs();
-native Â Â Â Â Â Â Â Â Â Â Â Â Â NPCs(
-native Â Â Â Â Â ====================(
+native Â Â Â Â Â Â Â Â Â Â Â Â Â NPCs(
+native Â Â Â Â Â ====================(
 native
 */
 
@@ -1294,24 +1268,9 @@ native
 native ConnectNPC(const name[], const script[]);
 
 /*
-                                                                                                                         
-    88888888ba,                                                                                                          88  
-    88      `"8b                                                                              ,d                         88  
-    88        `8b                                                                             88                         88  
-    88         88   ,adPPYba,  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   ,adPPYba,  ,adPPYYba,  MM88MMM  ,adPPYba,   ,adPPYb,88  
-    88         88  a8P_____88  88P'    "8a  88P'   "Y8  a8P_____88  a8"     ""  ""     `Y8    88    a8P_____88  a8"    `Y88  
-    88         8P  8PP"""""""  88       d8  88          8PP"""""""  8b          ,adPPPPP88    88    8PP"""""""  8b       88  
-    88      .a8P   "8b,   ,aa  88b,   ,a8"  88          "8b,   ,aa  "8a,   ,aa  88,    ,88    88,   "8b,   ,aa  "8a,   ,d88  
-    88888888Y"'     `"Ybbd8"'  88`YbbdP"'   88           `"Ybbd8"'   `"Ybbd8"'  `"8bbdP"Y8    "Y888  `"Ybbd8"'   `"8bbdP"Y8  
-                               88                                                                                            
-                               88                                                                                            
-
-*/
-
-/*
 native # Deprecated();
-native Â Â Â Â Â Â Â Â Â Â Deprecated(
-native Â Â Â Â Â ====================(
+native           Deprecated(
+native      ====================(
 native
 */
 
@@ -1337,19 +1296,6 @@ native GetActorPoolSize();
  */
 #pragma deprecated Use `OnVehicleDamageStatusUpdate`.
 forward void:EnableTirePopping(bool:enable);
-
-/**
- * <library>omp_core</library>
- * <summary>Shows 'game text' (on-screen text) for a certain length of time for all players.</summary>
- * <param name="format">The text to be displayed or formatted</param>
- * <param name="time">The duration of the text being shown in milliseconds</param>
- * <param name="style">The style of text to be displayed</param>
- * <seealso name="GameTextForPlayer" />
- * <seealso name="TextDrawShowForAll" />
- * <returns>This function always returns <b><c>1</c></b>.</returns>
- */
-#pragma deprecated Use `GameTextForAll`.
-native void:GameTextForAllf(const format[], time, style, OPEN_MP_TAGS:...) = GameTextForAll;
 
 /**
  * <library>omp_core</library>
@@ -1420,22 +1366,7 @@ native bool:GetServerVarAsBool(const cvar[]) = GetConsoleVarAsBool;
 
 /**
  * <library>omp_core</library>
- * <summary>Sends a message in the name of a player to all other players on the server.  The line will
- * start with the sender's name in their colour, followed by the message in white.</summary>
- * <param name="senderid">The ID of the sender.  If invalid, the message will not be sent</param>
- * <param name="format">The message that will be sent.  May be optionally formatted.</param>
- * <seealso name="SendPlayerMessageToPlayer" />
- * <seealso name="SendClientMessageToAll" />
- * <seealso name="OnPlayerText" />
- * <remarks>Avoid using format specifiers in your messages without formatting the string that is sent.
- *  It will result in crashes otherwise.</remarks>
- */
-#pragma deprecated Use `SendPlayerMessageToAll`.
-native bool:SendPlayerMessageToAllf(senderid, const format[], OPEN_MP_TAGS:...) = SendPlayerMessageToAll;
-
-/**
- * <library>omp_core</library>
- * <summary>This function does not work in the current SA:MP version! </summary>
+ * <summary>This function does not work in the current SA:MP version!/</summary>
  * <seealso name="CreatePickup" />
  * <seealso name="GivePlayerMoney" />
  * <seealso name="OnPlayerDeath" />
@@ -1457,18 +1388,22 @@ forward void:SetDeathDropAmount(amount);
  *  It is to be stored alongside the actual hash in the player's account. </remarks>
  * <remarks>The result is 64 charaters long, so the output array must be at least 65 cells big.</remarks>
  */
-#pragma deprecated Use BCrypt for hashing passwords.
+#pragma deprecated Use BCrypt for hashing passwords. For other purposes use SHA256_Hash
 native SHA256_PassHash(const password[], const salt[], output[], size = sizeof (output));
 
 /**
  * <library>omp_core</library>
- * <summary>Currently removed/</summary>
- * <seealso name="CreatePickup" />
- * <seealso name="GivePlayerMoney" />
- * <seealso name="OnPlayerDeath" />
+ * <summary>Hashes a string using the SHA-256 hashing algorithm.  Includes a salt.  The output is
+ * always 256 bytes in length, or the equivalent of 64 Pawn cells.</summary>
+ * <param name="content">The string content to hash</param>
+ * <param name="salt">The salt to use in the hash</param>
+ * <param name="output">The returned hash</param>
+ * <param name="size">The returned hash maximum length</param>
+ * <remarks>The salt is appended to the end of the string content, meaning string 'foo' and salt 'bar' would
+ * form 'foobar'. </remarks>
+ * <remarks>The result is 64 charaters long, so the output array must be at least 65 cells big.</remarks>
  */
-#pragma deprecated Use `CreatePickup`
-native void:SetDeathDropAmount(amount);
+native SHA256_Hash(const content[], const salt[], output[], size = sizeof (output)) = SHA256_PassHash;
 
 /**
  * <library>omp_core</library>
@@ -1550,3 +1485,22 @@ forward OnFilterScriptInit();
  */
 forward OnFilterScriptExit();
 
+/**
+ * <summary>This callback is called for each connected player when a script is loaded.</summary>
+ * <seealso name="OnFilterScriptInit" />
+ * <seealso name="OnFilterScriptExit" />
+ * <seealso name="OnGameModeInit" />
+ * <seealso name="OnGameModeExit" />
+ * <returns>This callback does not handle returns.</returns>
+ */
+forward OnScriptLoadPlayer(playerid, bool:isEntryScript);
+
+/**
+ * <summary>This callback is called for each connected player when a script is unloaded.</summary>
+ * <seealso name="OnFilterScriptInit" />
+ * <seealso name="OnFilterScriptExit" />
+ * <seealso name="OnGameModeInit" />
+ * <seealso name="OnGameModeExit" />
+ * <returns>This callback does not handle returns.</returns>
+ */
+forward OnScriptUnloadPlayer(playerid, bool:isEntryScript);

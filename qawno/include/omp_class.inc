@@ -9,7 +9,7 @@
  *     This Source Code Form is subject to the terms of the Mozilla Public License,
  *     v. 2.0. If a copy of the MPL was not distributed with this file, You can
  *     obtain one at http://mozilla.org/MPL/2.0/.
- *    
+ *
  *     The original code is copyright (c) 2023, open.mp team and contributors.
  *   </license>
  *   <summary pawndoc="true">
@@ -192,7 +192,7 @@ native bool:SpawnPlayer(playerid);
  * <seealso name="GetPlayerTeam" />
  * <seealso name="SetPlayerTeam" />
  */
-forward bool:SetTeamCount(count);
+forward void:SetTeamCount(count);
 
 /**
  * <library>omp_class</library>
@@ -216,12 +216,12 @@ native GetAvailableClasses();
 /**
  * <library>omp_class</library>
  */
-native GetPlayerClass(classid, &team, &skin = 0, &Float:spawnX = 0.0, &Float:spawnY = 0.0, &Float:spawnZ = 0.0, &Float:angle = 0.0, &WEAPON:weapon1 = WEAPON_FIST, &ammo1 = 0, &WEAPON:weapon2 = WEAPON_FIST, &ammo2 = 0, &WEAPON:weapon3 = WEAPON_FIST, &ammo3 = 0);
+native bool:GetPlayerClass(classid, &team, &skin = 0, &Float:spawnX = 0.0, &Float:spawnY = 0.0, &Float:spawnZ = 0.0, &Float:angle = 0.0, &WEAPON:weapon1 = WEAPON_FIST, &ammo1 = 0, &WEAPON:weapon2 = WEAPON_FIST, &ammo2 = 0, &WEAPON:weapon3 = WEAPON_FIST, &ammo3 = 0);
 
 /**
  * <library>omp_class</library>
  */
-native EditPlayerClass(classid, team, skin, Float:spawnX, Float:spawnY, Float:spawnZ, Float:angle, WEAPON:weapon1 = WEAPON_FIST, ammo1 = 0, WEAPON:weapon2 = WEAPON_FIST, ammo2 = 0, WEAPON:weapon3 = WEAPON_FIST, ammo3 = 0);
+native bool:EditPlayerClass(classid, team, skin, Float:spawnX, Float:spawnY, Float:spawnZ, Float:angle, WEAPON:weapon1 = WEAPON_FIST, ammo1 = 0, WEAPON:weapon2 = WEAPON_FIST, ammo2 = 0, WEAPON:weapon3 = WEAPON_FIST, ammo3 = 0);
 
 /*
                                                                                                   
@@ -289,4 +289,3 @@ forward OnPlayerRequestSpawn(playerid);
  * </returns>
  */
 forward OnPlayerSpawn(playerid);
-

@@ -9,7 +9,7 @@
  *     This Source Code Form is subject to the terms of the Mozilla Public License,
  *     v. 2.0. If a copy of the MPL was not distributed with this file, You can
  *     obtain one at http://mozilla.org/MPL/2.0/.
- *    
+ *
  *     The original code is copyright (c) 2023, open.mp team and contributors.
  *   </license>
  *   <summary pawndoc="true">
@@ -336,6 +336,7 @@ enum KEY:__KEY (<<= 1)
 	KEY_JUMP,
 	KEY_LOOK_RIGHT,
 	KEY_HANDBRAKE,
+	KEY_AIM                                    = KEY_HANDBRAKE,
 	KEY_LOOK_LEFT,
 	KEY_SUBMISSION,
 	KEY_LOOK_BEHIND                            = KEY_SUBMISSION,
@@ -365,6 +366,7 @@ static stock KEY:_@KEY() { return __KEY; }
 #define KEY_JUMP                               (KEY:0x00000020)
 #define KEY_LOOK_RIGHT                         (KEY:0x00000040)
 #define KEY_HANDBRAKE                          (KEY:0x00000080)
+#define KEY_AIM                                (KEY:0x00000080)
 #define KEY_LOOK_LEFT                          (KEY:0x00000100)
 #define KEY_SUBMISSION                         (KEY:0x00000200)
 #define KEY_LOOK_BEHIND                        (KEY:0x00000200)
@@ -1287,7 +1289,7 @@ native bool:GetPlayerPos(playerid, &Float:x, &Float:y, &Float:z);
  * <library>omp_player</library>
  * <summary>Set a player's facing angle (z rotation).</summary>
  * <param name="playerid">The ID of the player to set the facing angle of</param>
- * <param name="ang">The angle the player should face</param>
+ * <param name="angle">The angle the player should face</param>
  * <seealso name="GetPlayerFacingAngle" />
  * <seealso name="SetPlayerPos" />
  * <remarks>Angles are reversed in GTA:SA; 90 degrees would be East in the real world, but in GTA:SA
@@ -1298,13 +1300,13 @@ native bool:GetPlayerPos(playerid, &Float:x, &Float:y, &Float:z);
  *   <b><c>0</c></b>: The function failed to execute.  The player specified does not exist.
  * </returns>
  */
-native bool:SetPlayerFacingAngle(playerid, Float:ang);
+native bool:SetPlayerFacingAngle(playerid, Float:angle);
 
 /**
  * <library>omp_player</library>
  * <summary>Gets the angle a player is facing.</summary>
  * <param name="playerid">The player you want to get the angle of</param>
- * <param name="ang">The Float to store the angle in, passed by reference</param>
+ * <param name="angle">The Float to store the angle in, passed by reference</param>
  * <seealso name="GetVehicleZAngle" />
  * <seealso name="SetPlayerFacingAngle" />
  * <remarks>Angles are reversed in GTA:SA; 90 degrees would be East in the real world, but in GTA:SA
@@ -1313,7 +1315,7 @@ native bool:SetPlayerFacingAngle(playerid, Float:ang);
  * <remarks>Angles returned when inside a vehicle is rarely correct.  To get the correct facing angle
  * while inside a vehicle, use <a href="#GetVehicleZAngle">GetVehicleZAngle</a>.</remarks>
  */
-native bool:GetPlayerFacingAngle(playerid, &Float:ang);
+native bool:GetPlayerFacingAngle(playerid, &Float:angle);
 
 /**
  * <library>omp_player</library>
@@ -1569,6 +1571,30 @@ native bool:SendClientMessage(playerid, colour, const format[], OPEN_MP_TAGS:...
 
 /**
  * <library>omp_player</library>
+ * <summary>This function sends a message to a specific player with a chosen colour in the chat.  The
+ * whole line in the chatbox will be in the set colour unless colour embedding is used (since <b><c>0.3c</c></b>).</summary>
+ * <param name="playerid">The ID of the player to display the message to</param>
+ * <param name="colour">The colour of the message (<b>RGBA</b>)</param>
+ * <param name="format">The text that will be displayed <b>(max 144 characters).  Optionally formatted.</b></param>
+ * <seealso name="SendClientMessageToAll" />
+ * <seealso name="SendPlayerMessageToPlayer" />
+ * <seealso name="SendPlayerMessageToAll" />
+ * <remarks>If a message is longer than 144 characters, it will not be sent.  Truncation can be used
+ * to prevent this.  Displaying a message on multiple lines will also solve this issue. </remarks>
+ * <remarks>Avoid using the percent sign (or format specifiers) in the actual message text without properly
+ * escaping it (like <b><c>%%</c></b>).  It will result in crashes otherwise. </remarks>
+ * <remarks>You can use colour embedding for multiple colours in the message. </remarks>
+ * <returns>
+ *   <b><c>1</c></b>: The function executed successfully.  Success is reported when the string is over
+ * 144 characters, but the message won't be sent.<br />
+ *   <b><c>0</c></b>: The function failed to execute.  The player is not connected.
+ * </returns>
+ */
+#pragma deprecated Use `SendClientMessagef`
+native bool:SendClientMessagef(playerid, colour, const format[], OPEN_MP_TAGS:...) = SendClientMessage;
+
+/**
+ * <library>omp_player</library>
  * <summary>Shows 'game text' (on-screen text) for a certain length of time for a specific player.</summary>
  * <param name="playerid">The ID of the player to show the gametext for</param>
  * <param name="format">The text to be displayed.  May be formatted.</param>
@@ -1583,6 +1609,26 @@ native bool:SendClientMessage(playerid, colour, const format[], OPEN_MP_TAGS:...
  * </returns>
  */
 native bool:GameTextForPlayer(playerid, const format[], time, style, OPEN_MP_TAGS:...);
+
+/**
+ * <library>omp_player</library>
+ * <summary>Shows 'game text' (on-screen text) for a certain length of time for a specific player.</summary>
+ * <param name="playerid">The ID of the player to show the gametext for</param>
+ * <param name="format">The text to be displayed.  May be formatted.</param>
+ * <param name="time">The duration of the text being shown in milliseconds</param>
+ * <param name="style">The style of text to be displayed</param>
+ * <seealso name="GameTextForAll" />
+ * <seealso name="TextDrawShowForPlayer" />
+ * <returns>
+ *   <b><c>1</c></b>: The function executed successfully.  Success is reported when the style and/or
+ * time is invalid.  Nothing will happen though (no text displayed).  May also cause game crashes.<br
+ * />
+ *   <b><c>0</c></b>: The function failed to execute.  This means either the string is null or the player
+ * is not connected.
+ * </returns>
+ */
+#pragma deprecated Use `GameTextForPlayerf`
+native bool:GameTextForPlayerf(playerid, const format[], time, style, OPEN_MP_TAGS:...) = GameTextForPlayer;
 
 /**
  * <library>omp_player</library>
@@ -1667,6 +1713,24 @@ native bool:SendDeathMessageToPlayer(playerid, killer, killee, weapon);
  *  It will result in crashes otherwise.</remarks>
  */
 native bool:SendPlayerMessageToPlayer(playerid, senderid, const format[], OPEN_MP_TAGS:...);
+
+/**
+ * <library>omp_player</library>
+ * <summary>Sends a message in the name of a player to another player on the server.  The message will
+ * appear in the chat box but can only be seen by the user specified with <paramref name="playerid"
+ * />.  The line will start with the sender's name in their colour, followed by the message in white.</summary>
+ * <param name="playerid">The ID of the player who will receive the message</param>
+ * <param name="senderid">The sender's ID.  If invalid, the message will not be sent</param>
+ * <param name="format">The message that will be sent.  May be formatted.</param>
+ * <seealso name="SendPlayerMessageToAll" />
+ * <seealso name="SendClientMessage" />
+ * <seealso name="SendClientMessageToAll" />
+ * <seealso name="OnPlayerText" />
+ * <remarks>Avoid using format specifiers in your messages without formatting the string that is sent.
+ *  It will result in crashes otherwise.</remarks>
+ */
+#pragma deprecated Use `SendPlayerMessageToPlayer`
+native bool:SendPlayerMessageToPlayerf(playerid, senderid, const format[], OPEN_MP_TAGS:...) = SendPlayerMessageToPlayer;
 
 /**
  * <library>omp_player</library>
@@ -1800,7 +1864,7 @@ native SetPlayerName(playerid, const name[]);
  * and the player has to quit to choose a valid name.</remarks>
  * <returns>The length of the player's name. <b><c>0</c></b> if player specified doesn't exist.</returns>
  */
-native bool:GetPlayerName(playerid, name[], len = sizeof (name));
+native GetPlayerName(playerid, name[], len = sizeof (name));
 
 /**
  * <library>omp_player</library>
@@ -1950,7 +2014,7 @@ native bool:SetPlayerMarkerForPlayer(playerid, targetid, colour);
  * <library>omp_player</library>
  * <summary>Get the colour of a player's <b>nametag</b> and <b>radar blip</b> for another player.</summary>
  * <param name="playerid">The player that can see the player's changed blip/nametag colour</param>
- * <param name="targetid">The player whose colour was be changed</param>
+ * <param name="targetid">The player whose colour has been changed</param>
  * <seealso name="ShowPlayerMarkers" />
  * <seealso name="LimitPlayerMarkerRadius" />
  * <seealso name="SetPlayerColor" />
@@ -1964,7 +2028,7 @@ native GetPlayerMarkerForPlayer(playerid, targetid);
  * <summary>Starts recording a player's movements to a file, which can then be reproduced by an NPC.</summary>
  * <param name="playerid">The ID of the player to record</param>
  * <param name="recordType">The type of recording</param>
- * <param name="recordFile">The name of the file which will hold the recorded data.  It will be saved
+ * <param name="recordFile">The name of the file which will hold the recorded data. It will be saved
  * in the scriptfiles directory, with an automatically added .rec extension, you will need to move the
  * file to npcmodes/recordings to use for playback</param>
  * <seealso name="StopRecordingPlayerData" />
@@ -1982,21 +2046,44 @@ native bool:StopRecordingPlayerData(playerid);
 
 /**
  * <library>omp_player</library>
+ * <summary>Checks if a player is spawned.</summary>
+ * <param name="playerid">The ID of the player to check.</param>
+ * <returns><b><c>true</c></b> if the player is spawned, <b><c>false</c></b> if not.</returns>
+ * <seealso name="SpawnPlayer" />
  */
 native bool:IsPlayerSpawned(playerid);
 
 /**
  * <library>omp_player</library>
+ * <summary>Check if the player is controllable.</summary>
+ * <param name="playerid">The ID of the player to check.</param>
+ * <returns>
+ *   <b><c>true</c></b>: Controllable.<br />
+ *   <b><c>false</c></b>: Uncontrollable.
+ * </returns>
+ * <seealso name="SpawnPlayer" />
  */
 native bool:IsPlayerControllable(playerid);
 
 /**
  * <library>omp_player</library>
+ * <summary>Toggle player's ghost mode. Ghost mode disables the collision between player models.</summary>
+ * <param name="playerid">The ID of the player to toggle the ghost mode.</param>
+ * <param name="enable">true for enable and false for disable.</param>
+ * <returns>This function always returns <b><c>true</c></b>.</returns>
+ * <seealso name="GetPlayerGhostMode" />
  */
 native bool:TogglePlayerGhostMode(playerid, bool:enable);
 
 /**
  * <library>omp_player</library>
+ * <summary>Gets player's ghost mode.</summary>
+ * <param name="playerid">The ID of the player to get the ghost mode of.</param>
+ * <returns>
+ *   <b><c>true</c></b>: Controllable.<br />
+ *   <b><c>false</c></b>: Uncontrollable.
+ * </returns>
+ * <seealso name="SpawnPlayer" />
  */
 native bool:GetPlayerGhostMode(playerid);
 
@@ -2022,10 +2109,10 @@ native GetPlayerMoney(playerid);
  * <seealso name="GivePlayerMoney" />
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.<br />
- *   <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.
+ *   <b><c>0</c></b>: The function failed to execute. This means the player is not connected.
  * </returns>
  */
-native ResetPlayerMoney(playerid);
+native bool:ResetPlayerMoney(playerid);
 
 /**
  * <library>omp_player</library>
@@ -2036,10 +2123,10 @@ native ResetPlayerMoney(playerid);
  * <seealso name="GetPlayerMoney" />
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.<br />
- *   <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.
+ *   <b><c>0</c></b>: The function failed to execute. This means the player is not connected.
  * </returns>
  */
-native GivePlayerMoney(playerid, money);
+native bool:GivePlayerMoney(playerid, money);
 
 /**
  * <library>omp_player</library>
@@ -2054,10 +2141,10 @@ native GivePlayerMoney(playerid, money);
  * <remarks>The function's name is armour, not armor (Americanized).</remarks>
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.<br />
- *   <b><c>0</c></b>: The function failed to execute.  This means the player specified does not exist.
+ *   <b><c>0</c></b>: The function failed to execute. This means the player specified does not exist.
  * </returns>
  */
-native SetPlayerArmour(playerid, Float:armour);
+native bool:SetPlayerArmour(playerid, Float:armour);
 
 /**
  * <library>omp_player</library>
@@ -2078,7 +2165,7 @@ native SetPlayerArmour(playerid, Float:armour);
  *   <b><c>0</c></b> - failure (i.e.  player not connected).<br />
  * </returns>
  */
-native GetPlayerArmour(playerid, &Float:armour);
+native bool:GetPlayerArmour(playerid, &Float:armour);
 
 /**
  * <library>omp_player</library>
@@ -2090,10 +2177,10 @@ native GetPlayerArmour(playerid, &Float:armour);
  * <seealso name="GetPlayerWeapon" />
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.<br />
- *   <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.<br />
+ *   <b><c>0</c></b>: The function failed to execute. This means the player is not connected.<br />
  * </returns>
  */
-native GivePlayerWeapon(playerid, WEAPON:weaponid, ammo);
+native bool:GivePlayerWeapon(playerid, WEAPON:weaponid, ammo);
 
 /**
  * <library>omp_player</library>
@@ -2106,10 +2193,10 @@ native GivePlayerWeapon(playerid, WEAPON:weaponid, ammo);
  * <a href="#SetPlayerAmmo">SetPlayerAmmo</a>.</remarks>
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully, even if they didn't have the weapon (they absolutely don't have it now)<br />
- *   <b><c>0</c></b>: The function failed to execute.  This means the player specified does not exist.
+ *   <b><c>0</c></b>: The function failed to execute. This means the player specified does not exist.
  * </returns>
  */
-native RemovePlayerWeapon(playerid, WEAPON:weaponid);
+native bool:RemovePlayerWeapon(playerid, WEAPON:weaponid);
 
 /**
  * <library>omp_player</library>
@@ -2121,7 +2208,7 @@ native RemovePlayerWeapon(playerid, WEAPON:weaponid);
  * <remarks>Prior to version <b>0.3z R1-2</b>, when the player state is <b>PLAYER_STATE_PASSENGER</b>
  * this function returns the weapon held by the player before they entered the vehicle.  If a cheat
  * is used to spawn a weapon inside a vehicle, this function will not report it.</remarks>
- * <returns>The ID of the player's current weapon.  Returns <b><c>-1</c></b> if the player specified
+ * <returns>The ID of the player's current weapon. Returns <b><c>-1</c></b> if the player specified
  * does not exist.</returns>
  */
 native WEAPON:GetPlayerWeapon(playerid);
@@ -2136,10 +2223,10 @@ native WEAPON:GetPlayerWeapon(playerid);
  * <a href="#SetPlayerAmmo">SetPlayerAmmo</a>.</remarks>
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.<br />
- *   <b><c>0</c></b>: The function failed to execute.  This means the player specified does not exist.
+ *   <b><c>0</c></b>: The function failed to execute. This means the player specified does not exist.
  * </returns>
  */
-native ResetPlayerWeapons(playerid);
+native bool:ResetPlayerWeapons(playerid);
 
 /**
  * <library>omp_player</library>
@@ -2155,12 +2242,12 @@ native ResetPlayerWeapons(playerid);
  * the weapon will still show up in <a href="#GetPlayerWeaponData">GetPlayerWeaponData</a>, albeit with
  * <b><c>0</c></b> ammo.</remarks>
  * <returns>
- *   <b><c>1</c></b>: The function executed successfully.  Success is also returned when the weapon
+ *   <b><c>1</c></b>: The function executed successfully. Success is also returned when the weapon
  * specified is invalid.<br />
- *   <b><c>0</c></b>: The function failed to execute.  The player isn't connected.<br />
+ *   <b><c>0</c></b>: The function failed to execute. The player isn't connected.<br />
  * </returns>
  */
-native SetPlayerAmmo(playerid, WEAPON:weaponid, ammo);
+native bool:SetPlayerAmmo(playerid, WEAPON:weaponid, ammo);
 
 /**
  * <library>omp_player</library>
@@ -2174,10 +2261,10 @@ native SetPlayerAmmo(playerid, WEAPON:weaponid, ammo);
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.  Success is returned even when the function
  * fails to execute (the player doesn't have the weapon specified, or it is an invalid weapon).<br />
- *   <b><c>0</c></b>: The function failed to execute.  The player is not connected.
+ *   <b><c>0</c></b>: The function failed to execute. The player is not connected.
  * </returns>
  */
-native SetPlayerArmedWeapon(playerid, WEAPON:weaponid);
+native bool:SetPlayerArmedWeapon(playerid, WEAPON:weaponid);
 
 /**
  * <library>omp_player</library>
@@ -2204,11 +2291,11 @@ native GetPlayerAmmo(playerid);
  * <remarks>Old weapons with no ammo left are still returned.</remarks>
  * <returns>
  *   <b><c>1</c></b>: The function executed successfully.<br />
- *   <b><c>0</c></b>: The function failed to execute.  The player isn't connected and/or the weapon
+ *   <b><c>0</c></b>: The function failed to execute. The player isn't connected and/or the weapon
  * slot specified is invalid (valid is <b><c>0-12</c></b>).
  * </returns>
  */
-native GetPlayerWeaponData(playerid, WEAPON_SLOT:slot, &WEAPON:weapons, &ammo);
+native bool:GetPlayerWeaponData(playerid, WEAPON_SLOT:slot, &WEAPON:weapon, &ammo);
 
 /**
  * <library>omp_player</library>
@@ -2232,7 +2319,7 @@ native WEAPONSTATE:GetPlayerWeaponState(playerid);
 /**
  * <library>omp_player</library>
  * <summary>This function gets the ID of the vehicle the player is currently in.  Note: <b>NOT</b> the
- * model ID of the vehicle.  See <a href="#GetVehicleModel">GetVehicleModel</a> for that.</summary>
+ * model ID of the vehicle. See <a href="#GetVehicleModel">GetVehicleModel</a> for that.</summary>
  * <param name="playerid">The ID of the player in the vehicle that you want to get the ID of</param>
  * <seealso name="IsPlayerInVehicle" />
  * <seealso name="IsPlayerInAnyVehicle" />
@@ -2286,7 +2373,7 @@ native GetPlayerVehicleSeat(playerid);
  *   <b><c>0</c></b>: The function failed to execute.  The player or vehicle don't exist.
  * </returns>
  */
-native PutPlayerInVehicle(playerid, vehicleid, seatid);
+native bool:PutPlayerInVehicle(playerid, vehicleid, seatid);
 
 /**
  * <library>omp_player</library>
@@ -2326,7 +2413,7 @@ native bool:IsPlayerInAnyVehicle(playerid);
  *   <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.
  * </returns>
  */
-native RemovePlayerFromVehicle(playerid, bool:force = false);
+native bool:RemovePlayerFromVehicle(playerid, bool:force = false);
 
 /**
  * <library>omp_player</library>
@@ -2352,7 +2439,7 @@ native GetPlayerSurfingObjectID(playerid);
 /**
  * <library>omp_player</library>
  */
-native GetPlayerSurfingOffsets(playerid, &Float:offsetX, &Float:offsetY, &Float:offsetZ);
+native bool:GetPlayerSurfingOffsets(playerid, &Float:offsetX, &Float:offsetY, &Float:offsetZ);
 
 /*
 native #Camera()
@@ -2818,7 +2905,7 @@ native bool:IsPlayerUsingOfficialClient(playerid);
  * <param name="allow"><b><c>1</c></b> to allow, <b><c>0</c></b> to disallow</param>
  * <seealso name="AllowAdminTeleport" />
  */
-native AllowPlayerTeleport(playerid, bool:allow);
+native bool:AllowPlayerTeleport(playerid, bool:allow);
 
 /**
  * <library>omp_player</library>
@@ -2837,7 +2924,7 @@ native bool:IsPlayerTeleportAllowed(playerid);
  * <remarks>Players still have weapons server-side, they just can't arm them.</remarks>
  * <seealso name="IsPlayerWeaponsAllowed" />
  */
-native AllowPlayerWeapons(playerid, bool:allow);
+native bool:AllowPlayerWeapons(playerid, bool:allow);
 
 /**
  * <library>omp_player</library>
@@ -2846,105 +2933,6 @@ native AllowPlayerWeapons(playerid, bool:allow);
  * <seealso name="AllowPlayerWeapons" />
  */
 native bool:ArePlayerWeaponsAllowed(playerid);
-
-/*
-                                                                                                                             
-    88888888ba,                                                                                                          88  
-    88      `"8b                                                                              ,d                         88  
-    88        `8b                                                                             88                         88  
-    88         88   ,adPPYba,  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   ,adPPYba,  ,adPPYYba,  MM88MMM  ,adPPYba,   ,adPPYb,88  
-    88         88  a8P_____88  88P'    "8a  88P'   "Y8  a8P_____88  a8"     ""  ""     `Y8    88    a8P_____88  a8"    `Y88  
-    88         8P  8PP"""""""  88       d8  88          8PP"""""""  8b          ,adPPPPP88    88    8PP"""""""  8b       88  
-    88      .a8P   "8b,   ,aa  88b,   ,a8"  88          "8b,   ,aa  "8a,   ,aa  88,    ,88    88,   "8b,   ,aa  "8a,   ,d88  
-    88888888Y"'     `"Ybbd8"'  88`YbbdP"'   88           `"Ybbd8"'   `"Ybbd8"'  `"8bbdP"Y8    "Y888  `"Ybbd8"'   `"8bbdP"Y8  
-                               88                                                                                            
-                               88                                                                                            
-
-*/
-
-/*
-native # Deprecated();
-native Â Â Â Â Â Â Â Â Â Â Deprecated(
-native Â Â Â Â Â ====================(
-native
-*/
-
-/**
- * <library>omp_player</library>
- * <summary>This function sends a message to a specific player with a chosen colour in the chat.  The
- * whole line in the chatbox will be in the set colour unless colour embedding is used (since <b><c>0.3c</c></b>).</summary>
- * <param name="playerid">The ID of the player to display the message to</param>
- * <param name="colour">The colour of the message (<b>RGBA</b>)</param>
- * <param name="format">The text that will be displayed <b>(max 144 characters).  Optionally formatted.</b></param>
- * <seealso name="SendClientMessageToAll" />
- * <seealso name="SendPlayerMessageToPlayer" />
- * <seealso name="SendPlayerMessageToAll" />
- * <remarks>If a message is longer than 144 characters, it will not be sent.  Truncation can be used
- * to prevent this.  Displaying a message on multiple lines will also solve this issue. </remarks>
- * <remarks>Avoid using the percent sign (or format specifiers) in the actual message text without properly
- * escaping it (like <b><c>%%</c></b>).  It will result in crashes otherwise. </remarks>
- * <remarks>You can use colour embedding for multiple colours in the message. </remarks>
- * <returns>
- *   <b><c>1</c></b>: The function executed successfully.  Success is reported when the string is over
- * 144 characters, but the message won't be sent.<br />
- *   <b><c>0</c></b>: The function failed to execute.  The player is not connected.
- * </returns>
- */
-#pragma deprecated Use `SendClientMessage`
-native bool:SendClientMessagef(playerid, colour, const format[], OPEN_MP_TAGS:...) = SendClientMessage;
-
-/**
- * <library>omp_player</library>
- * <summary>Displays a message in chat to all players.  This is a multi-player equivalent of
- * <a href="#SendClientMessage">SendClientMessage</a>.</summary>
- * <param name="colour">The colour of the message (<b>RGBA</b>)</param>
- * <param name="format">The message to show (<b>max 144 characters</b>).  Optionally formatted.</param>
- * <seealso name="SendClientMessage" />
- * <seealso name="SendPlayerMessageToAll" />
- * <remarks>Avoid using format specifiers in your messages without formatting the string that is sent.
- *  It will result in crashes otherwise.</remarks>
- * <returns>This function always returns <b><c>1</c></b>.</returns>
- */
-#pragma deprecated Use `SendClientMessageToAll`
-native void:SendClientMessageToAllf(colour, const format[], OPEN_MP_TAGS:...) = SendClientMessageToAll;
-
-/**
- * <library>omp_player</library>
- * <summary>Shows 'game text' (on-screen text) for a certain length of time for a specific player.</summary>
- * <param name="playerid">The ID of the player to show the gametext for</param>
- * <param name="format">The text to be displayed.  May be formatted.</param>
- * <param name="time">The duration of the text being shown in milliseconds</param>
- * <param name="style">The style of text to be displayed</param>
- * <seealso name="GameTextForAll" />
- * <seealso name="TextDrawShowForPlayer" />
- * <returns>
- *   <b><c>1</c></b>: The function executed successfully.  Success is reported when the style and/or
- * time is invalid.  Nothing will happen though (no text displayed).  May also cause game crashes.<br
- * />
- *   <b><c>0</c></b>: The function failed to execute.  This means either the string is null or the player
- * is not connected.
- * </returns>
- */
-#pragma deprecated Use `GameTextForPlayer`
-native bool:GameTextForPlayerf(playerid, const format[], time, style, OPEN_MP_TAGS:...) = GameTextForPlayer;
-
-/**
- * <library>omp_player</library>
- * <summary>Sends a message in the name of a player to another player on the server.  The message will
- * appear in the chat box but can only be seen by the user specified with <paramref name="playerid"
- * />.  The line will start with the sender's name in their colour, followed by the message in white.</summary>
- * <param name="playerid">The ID of the player who will receive the message</param>
- * <param name="senderid">The sender's ID.  If invalid, the message will not be sent</param>
- * <param name="format">The message that will be sent.  May be formatted.</param>
- * <seealso name="SendPlayerMessageToAll" />
- * <seealso name="SendClientMessage" />
- * <seealso name="SendClientMessageToAll" />
- * <seealso name="OnPlayerText" />
- * <remarks>Avoid using format specifiers in your messages without formatting the string that is sent.
- *  It will result in crashes otherwise.</remarks>
- */
-#pragma deprecated Use `SendPlayerMessageToPlayer`
-native bool:SendPlayerMessageToPlayerf(playerid, senderid, const format[], OPEN_MP_TAGS:...) = SendPlayerMessageToPlayer;
 
 /*
                                                                                                   
@@ -3151,15 +3139,6 @@ forward OnPlayerDeath(playerid, killerid, WEAPON:reason);
  * </returns>
  */
 forward OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ);
-
-/**
- * <summary>This callback is called when something in-game like casinos give the player money</summary>
- * <param name="playerid">The ID of the player who got cash from the game</param>
- * <param name="amount">The amount of cash given</param>
- * <param name="source">Where the money came from</param>
- * <remarks>Doesn't work</remarks>
- */
-forward OnScriptCash(playerid, amount, source);
 
 /**
  * <summary>OnPlayerClickMap is called when a player places a target/waypoint on the pause menu map
@@ -3385,4 +3364,3 @@ forward OnPlayerConnect(playerid);
  * </returns>
  */
 forward OnPlayerDisconnect(playerid, reason);
-

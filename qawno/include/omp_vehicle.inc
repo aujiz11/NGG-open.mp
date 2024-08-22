@@ -9,7 +9,7 @@
  *     This Source Code Form is subject to the terms of the Mozilla Public License,
  *     v. 2.0. If a copy of the MPL was not distributed with this file, You can
  *     obtain one at http://mozilla.org/MPL/2.0/.
- *    
+ *
  *     The original code is copyright (c) 2023, open.mp team and contributors.
  *   </license>
  *   <summary pawndoc="true">
@@ -94,22 +94,22 @@ static stock CARMODTYPE:_@CARMODTYPE() { return MAX_CARMODS; }
 #define CARMODTYPE_REAR_BULLBAR                (CARMODTYPE:15)
 
 // Backwards-compatibility.
-#define VEHICLE_PARAMS: bool:
+#define VEHICLE_PARAMS: _:
 
 /**
  * <library>omp_vehicle</library>
  */
-const bool:VEHICLE_PARAMS_UNSET = bool:-1;
+const VEHICLE_PARAMS_UNSET = -1;
 
 /**
  * <library>omp_vehicle</library>
  */
-const bool:VEHICLE_PARAMS_OFF = false;
+const VEHICLE_PARAMS_OFF = 0;
 
 /**
  * <library>omp_vehicle</library>
  */
-const bool:VEHICLE_PARAMS_ON = true;
+const VEHICLE_PARAMS_ON = 1;
 
 /// <p/>
 /**
@@ -676,7 +676,7 @@ native bool:SetVehicleZAngle(vehicleid, Float:angle);
  *   <b><c>0</c></b>: The function failed to execute.  The player and/or vehicle specified do not exist.
  * </returns>
  */
-native bool:SetVehicleParamsForPlayer(vehicleid, playerid, bool:objective = undefined, bool:doors = undefined);
+native bool:SetVehicleParamsForPlayer(vehicleid, playerid, objective = -1, doors = -1);
 
 /**
  * <library>omp_vehicle</library>
@@ -691,7 +691,7 @@ native bool:SetVehicleParamsForPlayer(vehicleid, playerid, bool:objective = unde
  * it or not use it.</remarks>
  * <returns>This function always returns <b><c>1</c></b>.  It cannot fail to execute.</returns>
  */
-native bool:ManualVehicleEngineAndLights();
+native void:ManualVehicleEngineAndLights();
 
 /**
  * <library>omp_vehicle</library>
@@ -718,7 +718,7 @@ native bool:ManualVehicleEngineAndLights();
  *   <b><c>0</c></b>: The function failed to execute.  This means the vehicle does not exist.
  * </returns>
  */
-native bool:SetVehicleParamsEx(vehicleid, bool:engine = undefined, bool:lights = undefined, bool:alarm = undefined, bool:doors = undefined, bool:bonnet = undefined, bool:boot = undefined, bool:objective = undefined);
+native bool:SetVehicleParamsEx(vehicleid, engine = -1, lights = -1, alarm = -1, doors = -1, bonnet = -1, boot = -1, objective = -1);
 
 /**
  * <library>omp_vehicle</library>
@@ -735,7 +735,12 @@ native bool:SetVehicleParamsEx(vehicleid, bool:engine = undefined, bool:lights =
  * <remarks>If a parameter is unset (SetVehicleParamsEx not used beforehand) the value will be <b><c>-1</c></b>
  * ('unset').</remarks>
  */
-native bool:GetVehicleParamsEx(vehicleid, &bool:engine = undefined, &bool:lights = undefined, &bool:alarm = undefined, &bool:doors = undefined, &bool:bonnet = undefined, &bool:boot = undefined, &bool:objective = undefined);
+native bool:GetVehicleParamsEx(vehicleid, &engine = -1, &lights = -1, &alarm = -1, &doors = -1, &bonnet = -1, &boot = -1, &objective = -1);
+
+/**
+ * <library>omp_vehicle</library>
+ */
+native bool:SetVehicleParamsSirenState(vehicleid, bool:enabled);
 
 /**
  * <library>omp_vehicle</library>
@@ -744,7 +749,7 @@ native bool:GetVehicleParamsEx(vehicleid, &bool:engine = undefined, &bool:lights
  * <seealso name="OnVehicleSirenStateChange" />
  * <returns><b><c>-1</c></b> if unset (off), <b><c>0</c></b> if off, <b><c>1</c></b> if on</returns>
  */
-native bool:GetVehicleParamsSirenState(vehicleid);
+native GetVehicleParamsSirenState(vehicleid);
 
 /**
  * <library>omp_vehicle</library>
@@ -763,7 +768,7 @@ native bool:GetVehicleParamsSirenState(vehicleid);
  * <seealso name="GetVehicleParamsCarWindows" />
  * <remarks><b><c>1</c></b> is open, <b><c>0</c></b> is closed</remarks>
  */
-native bool:SetVehicleParamsCarDoors(vehicleid, bool:frontLeft = undefined, bool:frontRight = undefined, bool:rearLeft = undefined, bool:rearRight = undefined);
+native bool:SetVehicleParamsCarDoors(vehicleid, frontLeft = -1, frontRight = -1, rearLeft = -1, rearRight = -1);
 
 /**
  * <library>omp_vehicle</library>
@@ -779,7 +784,7 @@ native bool:SetVehicleParamsCarDoors(vehicleid, bool:frontLeft = undefined, bool
  * <remarks>The values returned in each variable are as follows: <b><c>-1</c></b> if not set, <b><c>0</c></b>
  * if closed, <b><c>1</c></b> if open.</remarks>
  */
-native bool:GetVehicleParamsCarDoors(vehicleid, &bool:frontLeft = undefined, &bool:frontRight = undefined, &bool:rearLeft = undefined, &bool:rearRight = undefined);
+native bool:GetVehicleParamsCarDoors(vehicleid, &frontLeft = -1, &frontRight = -1, &rearLeft = -1, &rearRight = -1);
 
 /**
  * <library>omp_vehicle</library>
@@ -797,7 +802,7 @@ native bool:GetVehicleParamsCarDoors(vehicleid, &bool:frontLeft = undefined, &bo
  * <seealso name="GetVehicleParamsCarDoors" />
  * <seealso name="GetVehicleParamsCarWindows" />
  */
-native bool:SetVehicleParamsCarWindows(vehicleid, bool:frontLeft = undefined, bool:frontRight = undefined, bool:rearLeft = undefined, bool:rearRight = undefined);
+native bool:SetVehicleParamsCarWindows(vehicleid, frontLeft = -1, frontRight = -1, rearLeft = -1, rearRight = -1);
 
 /**
  * <library>omp_vehicle</library>
@@ -814,7 +819,7 @@ native bool:SetVehicleParamsCarWindows(vehicleid, bool:frontLeft = undefined, bo
  * if closed, <b><c>1</c></b> if open.</remarks>
  * <returns>The vehicle's windows state is stored in the specified variables.</returns>
  */
-native bool:GetVehicleParamsCarWindows(vehicleid, &bool:frontLeft = undefined, &bool:frontRight = undefined, &bool:rearLeft = undefined, &bool:rearRight = undefined);
+native bool:GetVehicleParamsCarWindows(vehicleid, &frontLeft = -1, &frontRight = -1, &rearLeft = -1, &rearRight = -1);
 
 /**
  * <library>omp_vehicle</library>
@@ -903,6 +908,29 @@ native bool:VehicleCanHaveComponent(vehicleid, componentid);
  * <param name="vehicleid">ID of the vehicle</param>
  */
 native GetVehicleSeats(vehicleid);
+
+/**
+ * <library>omp_vehicle</library>
+ * <summary>Change a vehicle's primary and secondary colours.</summary>
+ * <param name="vehicleid">The ID of the vehicle to change the colours of</param>
+ * <param name="color1">The new vehicle's primary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour
+ * ID</a></param>
+ * <param name="color2">The new vehicle's secondary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour
+ * ID</a></param>
+ * <seealso name="ChangeVehiclePaintjob" />
+ * <seealso name="OnVehicleRespray" />
+ * <remarks>Some vehicles have only a primary colour and some can not have the colour changed at all.
+ *  A few (cement, squallo) have 4 colours, of which 2 can not currently be changed.</remarks>
+ * <returns>
+ *   <b><c>1</c></b>: The function executed successfully.  The vehicle's colour was successfully changed.<br
+ * />
+ *   <b><c>0</c></b>: The function failed to execute.  The vehicle does not exist.
+ * </returns>
+ */
+#if !defined MIXED_SPELLINGS
+	#pragma deprecated Use `ChangeVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
+native bool:ChangeVehicleColor(vehicleid, color1, color2);
 
 /**
  * <library>omp_vehicle</library>
@@ -1155,7 +1183,35 @@ native CARMODTYPE:GetVehicleComponentType(component);
  * Get random colour indexes that are valid for the given vehicle model.
  * </summary>
  */
-native GetRandomVehicleColourPair(modelid, &colour1, &colour2, &colour3 = 0, &colour4 = 0) = GetRandomCarColPair;
+native bool:GetRandomCarColPair(modelid, &colour1, &colour2, &colour3 = 0, &colour4 = 0);
+
+/**
+ * <library>omp_vehicle</library>
+ * <summary>
+ * Get random colour indexes that are valid for the given vehicle model.
+ * </summary>
+ */
+native bool:GetRandomVehicleColourPair(modelid, &colour1, &colour2, &colour3 = 0, &colour4 = 0) = GetRandomCarColPair;
+
+/**
+ * <library>omp_vehicle</library>
+ * <summary>
+ * Get random colour indexes that are valid for the given vehicle model.
+ * </summary>
+ */
+#if !defined MIXED_SPELLINGS
+	#pragma deprecated Use `GetRandomVehicleColourPair`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
+native bool:GetRandomVehicleColorPair(modelid, &color1, &color2, &color3 = 0, &color4 = 0) = GetRandomCarColPair;
+
+/**
+ * <library>omp_vehicle</library>
+ * <summary>
+ * Convert a car colour index to a HEX colour (RGBA).
+ * </summary>
+ */
+#pragma deprecated Use `VehicleColourIndexToColour`
+native CarColIndexToColour(index, alpha = 0xFF);
 
 /**
  * <library>omp_vehicle</library>
@@ -1383,9 +1439,23 @@ native GetVehicleVirtualWorld(vehicleid);
 
 /**
  * <library>omp_vehicle</library>
- * <summary>Returns some data.  What data?</summary>
+ */
+native bool:GetVehicleSirenState(vehicleid);
+
+/**
+ * <library>omp_vehicle</library>
  */
 native LANDING_GEAR_STATE:GetVehicleLandingGearState(vehicleid);
+
+/**
+ * <library>omp_vehicle</library>
+ */
+native GetVehicleHydraReactorAngle(vehicleid);
+
+/**
+ * <library>omp_vehicle</library>
+ */
+native Float:GetVehicleTrainSpeed(vehicleid);
 
 /**
  * <library>omp_vehicle</library>
@@ -1400,22 +1470,20 @@ native bool:IsValidVehicle(vehicleid);
 /**
  * <library>omp_vehicle</library>
  */
-forward GetPlayerLastSyncedVehicleID(playerid);
-
-/**
- * <library>omp_vehicle</library>
- */
-forward GetPlayerLastSyncedTrailerID(playerid);
-
-/**
- * <library>omp_vehicle</library>
- */
 native bool:GetVehicleSpawnInfo(vehicleid, &Float:spawnX, &Float:spawnY, &Float:spawnZ, &Float:angle, &colour1 = 0, &colour2 = 0);
 
 /**
  * <library>omp_vehicle</library>
  */
 native bool:SetVehicleSpawnInfo(vehicleid, modelid, Float:spawnX, Float:spawnY, Float:spawnZ, Float:angle, colour1, colour2, respawnDelay = -2, interior = -2);
+
+/**
+ * <library>omp_vehicle</library>
+ */
+#if !defined MIXED_SPELLINGS
+	#pragma deprecated Use `GetVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.
+#endif
+native bool:GetVehicleColor(vehicleid, &color1, &color2);
 
 /**
  * <library>omp_vehicle</library>
@@ -1450,17 +1518,7 @@ native GetVehicleRespawnDelay(vehicleid);
 /**
  * <library>omp_vehicle</library>
  */
-forward bool:SetVehicleOccupiedTick(vehicleid, ticks);
-
-/**
- * <library>omp_vehicle</library>
- */
 native GetVehicleOccupiedTick(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-forward bool:SetVehicleRespawnTick(vehicleid, ticks);
 
 /**
  * <library>omp_vehicle</library>
@@ -1485,12 +1543,12 @@ native bool:IsPlayerInModShop(playerid);
 /**
  * <library>omp_vehicle</library>
  */
-native GetPlayerSirenState(playerid);
+native bool:GetPlayerSirenState(playerid);
 
 /**
  * <library>omp_vehicle</library>
  */
-native GetPlayerLandingGearState(playerid);
+native LANDING_GEAR_STATE:GetPlayerLandingGearState(playerid);
 
 /**
  * <library>omp_vehicle</library>
@@ -1509,20 +1567,8 @@ native GetVehicleCab(vehicleid);
 
 /**
  * <library>omp_vehicle</library>
- * <remarks>As in "one who tows", not "tall building".</remarks>
- */
-#pragma deprecated Use `GetVehicleCab`.
-native GetVehicleTower(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
  */
 native bool:HasVehicleBeenOccupied(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-forward bool:SetVehicleBeenOccupied(vehicleid, bool:occupied);
 
 /**
  * <library>omp_vehicle</library>
@@ -1533,16 +1579,6 @@ native bool:IsVehicleOccupied(vehicleid);
  * <library>omp_vehicle</library>
  */
 native bool:IsVehicleDead(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-forward bool:SetVehicleDead(vehicleid, bool:dead);
-
-/**
- * <library>omp_vehicle</library>
- */
-native bool:SetVehicleParamsSirenState(vehicleid, bool:enabled);
 
 /**
  * <library>omp_vehicle</library>
@@ -1572,36 +1608,6 @@ native GetVehicleModelsUsed();
 
 /**
  * <library>omp_vehicle</library>
- */
-forward bool:HideVehicle(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-forward bool:ShowVehicle(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-forward bool:IsVehicleHidden(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-native bool:GetVehicleSirenState(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-native GetVehicleHydraReactorAngle(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
- */
-native Float:GetVehicleTrainSpeed(vehicleid);
-
-/**
- * <library>omp_vehicle</library>
  * <summary>Enable friendly fire for team vehicles.  Players will be unable to damage teammates' vehicles
  * (<a href="#SetPlayerTeam">SetPlayerTeam</a> must be used!).</summary>
  * <seealso name="SetPlayerTeam" />
@@ -1613,84 +1619,55 @@ native void:EnableVehicleFriendlyFire();
  */
 native GetVehicles(vehicles[], size = sizeof (vehicles));
 
-/*
-                                                                                                                             
-    88888888ba,                                                                                                          88  
-    88      `"8b                                                                              ,d                         88  
-    88        `8b                                                                             88                         88  
-    88         88   ,adPPYba,  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   ,adPPYba,  ,adPPYYba,  MM88MMM  ,adPPYba,   ,adPPYb,88  
-    88         88  a8P_____88  88P'    "8a  88P'   "Y8  a8P_____88  a8"     ""  ""     `Y8    88    a8P_____88  a8"    `Y88  
-    88         8P  8PP"""""""  88       d8  88          8PP"""""""  8b          ,adPPPPP88    88    8PP"""""""  8b       88  
-    88      .a8P   "8b,   ,aa  88b,   ,a8"  88          "8b,   ,aa  "8a,   ,aa  88,    ,88    88,   "8b,   ,aa  "8a,   ,d88  
-    88888888Y"'     `"Ybbd8"'  88`YbbdP"'   88           `"Ybbd8"'   `"Ybbd8"'  `"8bbdP"Y8    "Y888  `"Ybbd8"'   `"8bbdP"Y8  
-                               88                                                                                            
-                               88                                                                                            
+/**
+ * <library>omp_vehicle</library>
+ * <summary>Retrieves the ID of the player who is sitting in the given seat.</summary>
+ * <param name="vehicleid">The ID of the vehicle.</param>
+ * <param name="seatid">The ID of the seat in which you are looking for an occupant.</param>
+ * <seealso name="CountVehicleOccupants" />
+ * <returns>
+ *   <b><c>occupant's ID</c></b>: There is a player in that seat.<br />
+ *   <b><c>INVALID_PLAYER_ID</c></b>: The seat is empty or the vehicle is not created.
+ * </returns>
+ */
+native GetVehicleOccupant(vehicleid, seatid);
 
-*/
+/**
+ * <library>omp_vehicle</library>
+ * <summary>Gets the number of seats for a vehicle model.</summary>
+ * <param name="modelid">The ID of the model.</param>
+ * <returns>
+ *   <b><c>number of seats</c></b>: The number of seats as an intiger.<br />
+ * </returns>
+ */
+native GetVehicleMaxPassengers(modelid);
+
+/**
+ * <library>omp_vehicle</library>
+ * <summary>Returns the number of occupants in the given vehicle.</summary>
+ * <param name="modelid">The ID of the vehicle.</param>
+ * <seealso name="GetVehicleOccupant" />
+ * <returns>
+ *   <b><c>occupants number</c></b>: The number of occupants as an intiger.<br />
+ * </returns>
+ */
+native CountVehicleOccupants(vehicleid);
 
 /*
 native # Deprecated();
-native           Deprecated(
-native      ====================(
+native           Deprecated(
+native      ====================(
 native
 */
 
 /**
  * <library>omp_vehicle</library>
- * <summary>Change a vehicle's primary and secondary colours.</summary>
- * <param name="vehicleid">The ID of the vehicle to change the colours of</param>
- * <param name="colour1">The new vehicle's primary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour
- * ID</a></param>
- * <param name="colour2">The new vehicle's secondary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour
- * ID</a></param>
- * <seealso name="ChangeVehiclePaintjob" />
- * <seealso name="OnVehicleRespray" />
- * <remarks>Some vehicles have only a primary colour and some can not have the colour changed at all.
- *  A few (cement, squallo) have 4 colours, of which 2 can not currently be changed.</remarks>
- * <returns>
- *   <b><c>1</c></b>: The function executed successfully.  The vehicle's colour was successfully changed.<br
- * />
- *   <b><c>0</c></b>: The function failed to execute.  The vehicle does not exist.
- * </returns>
+ * <remarks>As in "one who tows", not "tall building".</remarks>
  */
-#if !defined MIXED_SPELLINGS
-  #pragma deprecated Use `ChangeVehicleColours`
+#if !defined LEGACY_SCRIPTING_API
+	#pragma deprecated Use `GetVehicleCab`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.
 #endif
-native bool:ChangeVehicleColor(vehicleid, colour1, colour2);
-
-/**
- * <library>omp_vehicle</library>
- * <param name="enable"><b><c>1</c></b> to enable, <b><c>0</c></b> to disable tire popping</param>
- * <remarks>Tire popping is enabled by default.  If
- * you want to disable tire popping, you'll have to manually script it using <a href="#OnVehicleDamageStatusUpdate">
- * OnVehicleDamageStatusUpdate</a>.</remarks>
- */
-#pragma deprecated Use `OnVehicleDamageStatusUpdate`.
-native void:EnableTirePopping(bool:enable);
-
-/**
- * <library>omp_vehicle</library>
- */
-#pragma deprecated Use `GetVehicleColours`
-native bool:GetVehicleColor(vehicleid, &colour1, &colour2);
-
-/**
- * <library>omp_vehicle</library>
- * <summary>
- * Get random colour indexes that are valid for the given vehicle model.
- * </summary>
- */
-#pragma deprecated Use `GetRandomVehicleColourPair`
-native GetRandomCarColPair(modelid, &colour1, &colour2, &colour3 = 0, &colour4 = 0);
-
-/**
- * <library>omp_vehicle</library>
- * <summary>
- * Convert a car colour index to a HEX colour (RGBA).
- * </summary>
- */
-#pragma deprecated Use `VehicleColourIndexToColour`
-native CarColIndexToColour(index, alpha = 0xFF);
+native GetVehicleTower(vehicleid);
 
 /*
                                                                                                   
@@ -1978,4 +1955,3 @@ forward OnVehicleDamageStatusUpdate(vehicleid, playerid);
  * </returns>
  */
 forward OnUnoccupiedVehicleUpdate(vehicleid, playerid, passenger_seat, Float:new_x, Float:new_y, Float:new_z, Float:vel_x, Float:vel_y, Float:vel_z);
-

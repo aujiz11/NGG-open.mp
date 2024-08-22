@@ -11,10 +11,11 @@
         "dark": "",
         "light": ""
     },
-    "chat_input_filter": true,
+    "logo": "",
     "discord": {
         "invite": ""
     },
+    "chat_input_filter": true,
     "enable_query": true,
     "exclude": [
         "Fixes"
