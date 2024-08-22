@@ -2031,7 +2031,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 	}
 	SetPVarInt(playerid, "LastWeapon", GetPlayerWeapon(playerid));
 
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
 	GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 	if(engine == VEHICLE_PARAMS_UNSET) switch(GetVehicleModel(vehicleid)) {
 		case 509, 481, 510: VehicleFuel[vehicleid] = GetVehicleFuelCapacity(vehicleid), arr_Engine{vehicleid} = 1, SetVehicleParamsEx(vehicleid,VEHICLE_PARAMS_ON,lights,alarm,doors,bonnet,boot,objective);
@@ -5030,7 +5030,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
     {
         if(IsPlayerInAnyVehicle(playerid) && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
        {
-            new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective,vehicleid;
+            new engine, lights, alarm, doors, bonnet, boot, objective,vehicleid;
             vehicleid = GetPlayerVehicleID(playerid);
             if(GetVehicleModel(vehicleid) == 481 || GetVehicleModel(vehicleid) == 509 || GetVehicleModel(vehicleid) == 510) return SendClientMessageEx(playerid,COLOR_WHITE,"Lenh nay khong the su dung trong chiec xe nay.");
             GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
@@ -5901,7 +5901,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 		new
 			newcar = GetPlayerVehicleID(playerid),
-			bool:engine, bool:lights, bool:alarm, bool:doors, bool:bonnet, bool:boot, bool:objective, v;
+			engine, lights, alarm, doors, bonnet, boot, objective, v;
 
 		gLastCar[playerid] = newcar;
 		if(GetPVarInt(playerid, "EventToken") == 1) {

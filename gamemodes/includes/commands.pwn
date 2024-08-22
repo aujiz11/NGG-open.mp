@@ -260,7 +260,7 @@ CMD:loadkit(playerid, params[]) {
 		    if(GetPVarInt(playerid, "CarVestKit"))
 		    {
 		    	if(!IsABike(vehicleid) && !IsAPlane(vehicleid)) {
-					new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+					new engine, lights, alarm, doors, bonnet, boot, objective;
 					GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 					if(boot == VEHICLE_PARAMS_OFF || boot == VEHICLE_PARAMS_UNSET)
 					{
@@ -298,7 +298,7 @@ CMD:usekit(playerid, params[]) {
 		    if(CrateVehicleLoad[vehicleid][vCarVestKit] > 0)
 		    {
 		    	if(!IsABike(vehicleid) && !IsAPlane(vehicleid)) {
-					new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+					new engine, lights, alarm, doors, bonnet, boot, objective;
 					GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 					if(boot == VEHICLE_PARAMS_OFF || boot == VEHICLE_PARAMS_UNSET)
 					{
@@ -1081,7 +1081,7 @@ CMD:islandgps(playerid, params[]) {
 }
 
 CMD:announcetakeoff(playerid, params[]) {
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective,vehicleid, callsign[24], string[128], zone[64],
+	new engine, lights, alarm, doors, bonnet, boot, objective,vehicleid, callsign[24], string[128], zone[64],
 	Float:X, Float:Y, Float:Z;
 	GetPlayerPos(playerid, X, Y, Z);
 	vehicleid = GetPlayerVehicleID(playerid);
@@ -2096,7 +2096,7 @@ CMD:fix(playerid, params[])
   			if(IsPlayerInRangeOfVehicle(playerid, closestcar, 10.0))
   			{
 				if(!IsABike(closestcar) && !IsAPlane(closestcar)) {
-					new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+					new engine, lights, alarm, doors, bonnet, boot, objective;
 					GetVehicleParamsEx(closestcar,engine,lights,alarm,doors,bonnet,boot,objective);
 					if(bonnet == VEHICLE_PARAMS_OFF || bonnet == VEHICLE_PARAMS_UNSET)
 					{
@@ -3245,7 +3245,7 @@ CMD:searchcar(playerid, params[])
         return 1;
     }
 	if(!IsABike(closestcar) && !IsAPlane(closestcar)) {
-		new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+		new engine, lights, alarm, doors, bonnet, boot, objective;
 		GetVehicleParamsEx(closestcar,engine,lights,alarm,doors,bonnet,boot,objective);
 		if(boot == VEHICLE_PARAMS_OFF || boot == VEHICLE_PARAMS_UNSET)
 		{
@@ -3311,7 +3311,7 @@ CMD:takecarweapons(playerid, params[])
         SendClientMessageEx(playerid,COLOR_GREY,"Ban khong o gan bat ki xe nao.");
         return 1;
     }
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
 	GetVehicleParamsEx(closestcar,engine,lights,alarm,doors,bonnet,boot,objective);
 	if(boot == VEHICLE_PARAMS_OFF || boot == VEHICLE_PARAMS_UNSET)
 	{
@@ -7236,7 +7236,7 @@ CMD:car(playerid, params[])
 	}
 	if(strcmp(params, "engine", true) == 0 && IsPlayerInAnyVehicle(playerid) && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
 	{
-		new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective,vehicleid;
+		new engine, lights, alarm, doors, bonnet, boot, objective,vehicleid;
 		vehicleid = GetPlayerVehicleID(playerid);
 		if(GetVehicleModel(vehicleid) == 481 || GetVehicleModel(vehicleid) == 509 || GetVehicleModel(vehicleid) == 510 || DynVeh[vehicleid] != -1 && DynVehicleInfo[DynVeh[vehicleid]][gv_iType] == 1 && GetVehicleModel(vehicleid) == 592) return SendClientMessageEx(playerid,COLOR_WHITE,"This command can't be used in this vehicle.");
 		GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
@@ -7314,7 +7314,7 @@ CMD:car(playerid, params[])
 		if(IsPlayerInAnyVehicle(playerid) && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
 		{
 			new vehicleid = GetPlayerVehicleID(playerid);
-			new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective,enginestatus[4],lightstatus[4];
+			new engine, lights, alarm, doors, bonnet, boot, objective,enginestatus[4],lightstatus[4];
 			GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 			if(!IsRefuelableVehicle(vehicleid)) return SendClientMessageEx(playerid,COLOR_RED,"Chiec xe nay khong can nhien lieu.");
 			if(engine != VEHICLE_PARAMS_ON) strcpy(enginestatus, "OFF", 4);
@@ -7332,7 +7332,7 @@ CMD:car(playerid, params[])
 		if(IsPlayerInAnyVehicle(playerid) && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
 		{
 			new vehicleid = GetPlayerVehicleID(playerid);
-			new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective,enginestatus[4],lightstatus[4];
+			new engine, lights, alarm, doors, bonnet, boot, objective,enginestatus[4],lightstatus[4];
 			GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 			if(!IsRefuelableVehicle(vehicleid)) return SendClientMessageEx(playerid,COLOR_RED,"Chiec xe nay khong can nhien lieu.");
 			if(engine != VEHICLE_PARAMS_ON) strcpy(enginestatus, "OFF", 4);
@@ -7389,7 +7389,7 @@ CMD:refuel(playerid, params[])
 		if (IsVIPcar(vehicleid)) return SendClientMessageEx(playerid, COLOR_RED, "Day la chiec xe VIP khong gioi han nhien lieu, ban khong the do xang cho chiec xe nay.");
 		if (IsFamedVeh(vehicleid)) return SendClientMessageEx(playerid, COLOR_RED, "Day la chiec xe khong gioi han nhien lieu, ban khong the do xang cho chiec xe nay.");
 		if (IsAdminSpawnedVehicle(vehicleid)) return SendClientMessageEx(playerid, COLOR_RED, "Day la chiec xe khong gioi han nhien lieu, ban khong the do xang cho chiec xe nay.");
-	    new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	    new engine, lights, alarm, doors, bonnet, boot, objective;
     	GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 	    if(engine == VEHICLE_PARAMS_ON) return SendClientMessageEx(playerid, COLOR_RED, "Ban phai tat may xe truoc khi do xang (/car light).");
      	if (Businesses[iBusinessID][GasPumpGallons][iPumpID] == 0.0) return SendClientMessageEx(playerid, COLOR_RED, "Khong co xang trong tram xang nay.");
@@ -16775,7 +16775,7 @@ CMD:kiemtrahang(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_GRAD1, "Ban khong the kiem tra lo hang khi dang trong xe.");
 			return 1;
 		}
-		new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+		new engine, lights, alarm, doors, bonnet, boot, objective;
 		GetVehicleParamsEx(closestcar,engine,lights,alarm,doors,bonnet,boot,objective);
 		if(boot == VEHICLE_PARAMS_OFF || boot == VEHICLE_PARAMS_UNSET)
 		{
@@ -27093,7 +27093,7 @@ CMD:trunkput(playerid, params[])
 		}
 	}
 	if(pvid == -1) return SendClientMessageEx(playerid,COLOR_GREY,"You are not near any vehicle that you own.");
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
 	GetVehicleParamsEx(PlayerVehicleInfo[playerid][pvid][pvId],engine,lights,alarm,doors,bonnet,boot,objective);
 	if(boot == VEHICLE_PARAMS_OFF || boot == VEHICLE_PARAMS_UNSET) return SendClientMessageEx(playerid, COLOR_GRAD3, "You can't take/put stuff inside the trunk if it's closed!(/car trunk to open it)");
 	if(GetVehicleModel(PlayerVehicleInfo[playerid][pvid][pvId]) == 481 || GetVehicleModel(PlayerVehicleInfo[playerid][pvid][pvId]) == 510)  return SendClientMessageEx(playerid,COLOR_GREY,"That vehicle doesn't have a trunk.");
@@ -27376,7 +27376,7 @@ CMD:trunktake(playerid, params[]) {
 				}
 
 				new
-					bool:engine, bool:lights, bool:alarm, bool:doors, bool:bonnet, bool:boot, bool:objective;
+					engine, lights, alarm, doors, bonnet, boot, objective;
 
 				GetVehicleParamsEx(PlayerVehicleInfo[playerid][d][pvId], engine, lights, alarm, doors, bonnet, boot, objective);
 
@@ -47359,7 +47359,7 @@ CMD:repair(playerid, params[])
 						if(giveplayerid == playerid) { SendClientMessageEx(playerid, COLOR_GREY, "   Khong the lam dieu do!"); return 1; }
 	                    if(!IsABike(closestcar) && !IsAPlane(closestcar))
 						{
-							new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+							new engine, lights, alarm, doors, bonnet, boot, objective;
 							GetVehicleParamsEx(closestcar,engine,lights,alarm,doors,bonnet,boot,objective);
 							if(bonnet == VEHICLE_PARAMS_OFF || bonnet == VEHICLE_PARAMS_UNSET)
 							{

@@ -3825,7 +3825,7 @@ public Elevator_TurnToIdle()
 
 public DisableVehicleAlarm(vehicleid)
 {
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
  	GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
     SetVehicleParamsEx(vehicleid,engine,lights,VEHICLE_PARAMS_OFF,doors,bonnet,boot,objective);
 	return 1;
@@ -4819,7 +4819,7 @@ forward SetVehicleEngine(vehicleid, playerid);
 public SetVehicleEngine(vehicleid, playerid)
 {
 	new string[128];
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
     GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
     if(engine == VEHICLE_PARAMS_ON)
 	{
@@ -9081,7 +9081,7 @@ stock SendAudioURLToRange(url[], Float:x, Float:y, Float:z, Float:range)
 
 stock SetVehicleLights(vehicleid, playerid)
 {
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
     GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
     if(lights == VEHICLE_PARAMS_ON)
 	{
@@ -9098,7 +9098,7 @@ stock SetVehicleLights(vehicleid, playerid)
 
 stock SetVehicleHood(vehicleid, playerid)
 {
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
     GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
     if(bonnet == VEHICLE_PARAMS_ON)
 	{
@@ -9115,7 +9115,7 @@ stock SetVehicleHood(vehicleid, playerid)
 
 stock SetVehicleTrunk(vehicleid, playerid)
 {
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
     GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
     if(boot == VEHICLE_PARAMS_ON)
 	{
@@ -9132,7 +9132,7 @@ stock SetVehicleTrunk(vehicleid, playerid)
 
 stock SetVehicleDoors(vehicleid, playerid)
 {
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
     GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
     if(doors == VEHICLE_PARAMS_ON)
 	{
@@ -18282,7 +18282,7 @@ stock HideBackupActiveForPlayer(playerid)
 stock UpdateVehicleHUDForPlayer(p, fuel, speed)
 {
 	new str[128], vehicleid = GetPlayerVehicleID(p), szColor[4];
-	new bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+	new engine, lights, alarm, doors, bonnet, boot, objective;
 	GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 	switch(speed)
 	{

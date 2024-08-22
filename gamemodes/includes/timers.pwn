@@ -2048,7 +2048,7 @@ task ServerMicrobeat[500]() {
 		Float: fVehicleHealth,
 		iVehicle,
 		//szSpeed[42],
-		bool:arrVehParams[7];
+		arrVehParams[7];
 
 	foreach(new i: Player)
 	{
@@ -2132,7 +2132,7 @@ task ServerMicrobeat[500]() {
 // TickRate: 60 secs.
 task VehicleUpdate[60000]() {
 
-    static bool:engine,bool:lights,bool:alarm,bool:doors,bool:bonnet,bool:boot,bool:objective;
+    static engine, lights, alarm, doors, bonnet, boot, objective;
     for(new v = 0; v < MAX_VEHICLES; v++) if(GetVehicleModel(v) && GetVehicleModel(v) != 481 && GetVehicleModel(v) != 509 && GetVehicleModel(v) != 510) {
 	    GetVehicleParamsEx(v,engine,lights,alarm,doors,bonnet,boot,objective);
 	    if(engine == VEHICLE_PARAMS_ON) {
