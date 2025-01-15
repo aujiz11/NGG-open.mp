@@ -43,6 +43,21 @@
 /**
  * <library>omp_object</library>
  */
+#if defined MAX_OBJECT_MATERIAL_SLOTS
+	#if MAX_OBJECT_MATERIAL_SLOTS < 1 || MAX_OBJECT_MATERIAL_SLOTS > 16
+		#error MAX_OBJECT_MATERIAL_SLOTS must be >= 1 and <= 16
+	#endif
+
+	const __MAX_OBJECT_MATERIAL_SLOTS      	   = MAX_OBJECT_MATERIAL_SLOTS;
+	#define __MAX_OBJECT_MATERIAL_SLOTS
+#else
+	const MAX_OBJECT_MATERIAL_SLOTS            = 16;
+	#define MAX_OBJECT_MATERIAL_SLOTS          16
+#endif
+
+/**
+ * <library>omp_object</library>
+ */
 const INVALID_OBJECT_ID                        = 0xFFFF;
 #define INVALID_OBJECT_ID                      65535
 
@@ -1142,7 +1157,7 @@ native Float:GetPlayerObjectMoveSpeed(playerid, objectid);
  * <library>omp_object</library>
  * <summary></summary>
  */
-native Float:GetPlayerObjectTarget(playerid, objectid, &Float:targetX = 0.0, &Float:targetY = 0.0, &Float:targetZ = 0.0);
+native bool:GetPlayerObjectTarget(playerid, objectid, &Float:targetX = 0.0, &Float:targetY = 0.0, &Float:targetZ = 0.0) = GetPlayerObjectMovingTargetPos;
 
 /**
  * <library>omp_object</library>
