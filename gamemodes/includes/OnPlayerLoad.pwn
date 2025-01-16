@@ -561,6 +561,7 @@ public OnPlayerLoad(playerid)
 	SendClientMessageEx(playerid, COLOR_WHITE, string);
 	SetSpawnInfo(playerid, 0, PlayerInfo[playerid][pModel], PlayerInfo[playerid][pPos_x], PlayerInfo[playerid][pPos_y], PlayerInfo[playerid][pPos_z], 1.0, -1, -1, -1, -1, -1, -1);
 	TogglePlayerSpectating(playerid, false);
+	SetCameraBehindPlayer(playerid);
 	defer SkinDelay(playerid);
 
 	gPlayerLogged{playerid} = 1;

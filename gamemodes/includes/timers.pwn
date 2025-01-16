@@ -819,7 +819,7 @@ task EMSUpdate[5000]()
 				GameTextForPlayer(i, "~n~~n~~n~~n~~n~~n~~n~~n~~w~Bam ~r~~k~~CONVERSATION_YES~~w~ de tiep tuc", 2000, 3);
 			}
 		}
-	    if(GetPVarType(i, "Injured"))
+	    if(GetPVarInt(i, "Injured"))
 	    {
 			#if defined zombiemode
 	        if(zombieevent == 1 && GetPVarType(i, "pZombieBit"))
@@ -838,7 +838,8 @@ task EMSUpdate[5000]()
 				if(GetPVarInt(i, "EMSAttempt") == -1)
 				{
 					if(GetPlayerAnimationIndex(i) != 746) ClearAnimations(i), ApplyAnimation(i, "KNIFE", "KILL_Knife_Ped_Die", 4.0, false, true, true, true, 0, 1);
-    				if(!GetPVarType(i, "StreamPrep") && !IsPlayerInRangeOfPoint(i, 3.0, GetPVarFloat(i,"MedicX"), GetPVarFloat(i,"MedicY"), GetPVarFloat(i,"MedicZ")) && !GetPVarInt(i, "OnStretcher"))
+
+					if(!GetPVarInt(i, "StreamPrep") && !IsPlayerInRangeOfPoint(i, 3.0, GetPVarFloat(i,"MedicX"), GetPVarFloat(i,"MedicY"), GetPVarFloat(i,"MedicZ")) && !GetPVarInt(i, "OnStretcher"))
 	    			{
       			        SendClientMessageEx(i, COLOR_WHITE, "Ban da bi bat tinh, ban se duoc dua ve benh vien de dieu tri.");
 	        			KillEMSQueue(i);
@@ -849,7 +850,7 @@ task EMSUpdate[5000]()
 				if(GetPVarInt(i, "EMSAttempt") == 1)
 				{
 					if(GetPlayerAnimationIndex(i) != 746) ClearAnimations(i), ApplyAnimation(i, "KNIFE", "KILL_Knife_Ped_Die", 4.0, false, true, true, true, 0, 1);
-	    			if(!GetPVarType(i, "StreamPrep") && !IsPlayerInRangeOfPoint(i, 3.0, GetPVarFloat(i,"MedicX"), GetPVarFloat(i,"MedicY"), GetPVarFloat(i,"MedicZ")) && !GetPVarInt(i, "OnStretcher"))
+	    			if(!GetPVarInt(i, "StreamPrep") && !IsPlayerInRangeOfPoint(i, 3.0, GetPVarFloat(i,"MedicX"), GetPVarFloat(i,"MedicY"), GetPVarFloat(i,"MedicZ")) && !GetPVarInt(i, "OnStretcher"))
 	    			{
 	        			SendClientMessageEx(i, COLOR_WHITE, "Ban lan ra bat tinh, ban duoc dua den benh vien da dieu tri.");
 	        			KillEMSQueue(i);
@@ -859,7 +860,7 @@ task EMSUpdate[5000]()
 				}
 				if(GetPVarInt(i, "EMSAttempt") == 2)
 				{
-	    			if(!GetPVarType(i, "StreamPrep") && !IsPlayerInRangeOfPoint(i, 3.0, GetPVarFloat(i,"MedicX"), GetPVarFloat(i,"MedicY"), GetPVarFloat(i,"MedicZ")) && !GetPVarInt(i, "OnStretcher"))
+	    			if(!GetPVarInt(i, "StreamPrep") && !IsPlayerInRangeOfPoint(i, 3.0, GetPVarFloat(i,"MedicX"), GetPVarFloat(i,"MedicY"), GetPVarFloat(i,"MedicZ")) && !GetPVarInt(i, "OnStretcher"))
 	    			{
 	    			    SetPVarInt(i, "EMSWarns", GetPVarInt(i, "EMSWarns")+1);
 	    			    if(GetPVarInt(i, "EMSWarns") == 2)

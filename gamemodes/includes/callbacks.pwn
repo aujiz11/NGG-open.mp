@@ -2259,7 +2259,6 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 
 public OnPlayerConnect(playerid) {
 	if(IsPlayerNPC(playerid)) return 1;
-	TogglePlayerSpectating(playerid, true);
 	
 	g_arrQueryHandle{playerid} = random(256);
 
@@ -2641,6 +2640,7 @@ public OnPlayerConnect(playerid) {
 	InsideMainMenu{playerid} = 0;
 	InsideTut{playerid} = 0;
 
+	//TogglePlayerSpectating(playerid, true);
 	ShowMainMenuGUI(playerid);
 	SetPlayerJoinCamera(playerid);
 	ClearChatbox(playerid);
@@ -3666,8 +3666,6 @@ public OnPlayerDeath(playerid, killerid, reason)
 		{
 			if(HungerPlayerInfo[playerid][hgInEvent] != 1)
 			{
-				SetPVarInt(playerid, "Injured", 1);
-
 				new Float:mX, Float:mY, Float:mZ;
 				GetPlayerPos(playerid, mX, mY, mZ);
 
@@ -3676,6 +3674,8 @@ public OnPlayerDeath(playerid, killerid, reason)
 				SetPVarFloat(playerid, "MedicZ", mZ);
 				SetPVarInt(playerid, "MedicVW", GetPlayerVirtualWorld(playerid));
 				SetPVarInt(playerid, "MedicInt", GetPlayerInterior(playerid));
+
+				SetPVarInt(playerid, "Injured", 1);
 			}
 		}
 	}
