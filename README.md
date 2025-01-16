@@ -1,15 +1,9 @@
 # Next Generation open.mp Version
 
-## _[Latest open.mp version v1.3.1.2748](https://github.com/openmultiplayer/open.mp/releases/tag/v1.3.1.2748)_
+## _[Latest open.mp version v1.4.0.2783](https://github.com/openmultiplayer/open.mp/releases/tag/v1.4.0.2779)_
 
 
 ***Next Generation Gaming*** là một gamemode được người Việt Nam tin tưởng và  sử dụng trên nền tảng SA-MP trong nhiều năm qua vì có hệ thống đầy đủ và lối chơi đơn giản. Tuy nhiên, gamemode này đã được phát triển từ rất lâu đời nên hầu như các thư viện đang dùng  đã cũ, vì thế hôm nay mình sẽ phát triển NGG Open Source trên nền tảng open.mp hoàn toàn miễn phí.
-
-## To-do list
-- [x] Chuyển đổi từ *SA-MP* lên *open.mp*.
-- [x] Sử dụng phiên bản YSI Nightly.
-- [x] Sử dụng phiên bản sscanf 2.13.8.
-- [x] Pawn Complier 3.10.11.
 
 ## Requires Library
 |    Plugin             |   Version                                                                     |
@@ -23,6 +17,5 @@
 
 ## Credits
 - ***Developer***: Ausil (#aujiz)
-- Current Version: 1.0.0
 
 ***Vui lòng gửi [Issues](https://github.com/aujiz11/NGG-open.mp/issues) nếu bạn gặp bất kì vấn đề gì về sản phẩm của tôi.***
