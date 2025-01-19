@@ -4632,7 +4632,7 @@ public OnPlayerEnterCheckpoint(playerid)
 		return 1;
 	}
 	// Pizza Delivery
-	if(GetPVarInt(playerid, "Pizza") > 0 && IsPlayerInRangeOfPoint(playerid, 5.0, HouseInfo[GetPVarInt(playerid, "Pizza")][hExteriorX], HouseInfo[GetPVarInt(playerid, "Pizza")][hExteriorY], HouseInfo[GetPVarInt(playerid, "Pizza")][hExteriorZ]) && GetPlayerInterior(playerid) == HouseInfo[GetPVarInt(playerid, "Pizza")][hExtIW] && GetPlayerVirtualWorld(playerid) == HouseInfo[GetPVarInt(playerid, "Pizza")][hExtVW])
+	if(GetPVarInt(playerid, "Pizza") > 0 && IsPlayerInRangeOfPoint(playerid, 5.0, HouseInfo[GetPVarInt(playerid, "Pizza")-1][hExteriorX], HouseInfo[GetPVarInt(playerid, "Pizza")-1][hExteriorY], HouseInfo[GetPVarInt(playerid, "Pizza")-1][hExteriorZ]) && GetPlayerInterior(playerid) == HouseInfo[GetPVarInt(playerid, "Pizza")-1][hExtIW] && GetPlayerVirtualWorld(playerid) == HouseInfo[GetPVarInt(playerid, "Pizza")-1][hExtVW])
 	{
 	    new string[128];
 		if (GetPVarInt(playerid, "tpPizzaTimer") != 0)

@@ -44738,7 +44738,7 @@ CMD:getpizza(playerid, params[]) {
 		SetPVarInt(playerid, "tpPizzaTimer", iDist / 80);
 		SetPVarInt(playerid, "pizzaTotal", iDist / 10);
 		SetPVarInt(playerid, "pizzaTimer", iDist / 10);
-		SetPVarInt(playerid, "Pizza", rand);
+		SetPVarInt(playerid, "Pizza", rand+1);
 
 		SetTimerEx("OtherTimerEx", 1000, false, "ii", playerid, TYPE_TPPIZZARUNTIMER);
 		SetTimerEx("OtherTimerEx", 1000, false, "ii", playerid, TYPE_PIZZATIMER);
